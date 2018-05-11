@@ -40,17 +40,25 @@ for TEST in TESTS:
 		num_matched = 0
 		num_tot = 0
 		temp = str(elem).strip().split()
-		for tmp in temp:
-			tmp = tmp.strip()
+		for t in temp:
+			tmp = t.strip().strip(".").strip('\\').strip("\'").strip("\\").strip(";").strip(".").strip(",").strip("(").strip(")").split('\\n')[0].strip(";").strip(".").strip(":").strip('\'')
 			if tmp.isalpha() or tmp.isdigit():
 				if tmp in wordlist:
 					num_matched+=1
-				num_tot+=1
+					num_tot+=1
+				else:
+					num_tot+=1
+			else:
+				pass
+				# print(tmp)
+
+		# print(num_matched, num_tot) if num_matched/num_tot > 0.8
 		if num_tot==0:
 			index+=1
 			continue	
-		if(num_matched/num_tot > 0.8):
-			output.write("Question " +str(index) + " on Free Response on " + TEST +": " + '\n' + " ".join(temp)+'\n\n\n')
+		if(num_matched/num_tot > accuracy):
+			# print(num_matched, num_tot)
+			output.write("Question " +str(index) + " on Free Response on " + TEST +"with accuracy " + str(num_matched/num_tot) + ": " + '\n' + " ".join(temp)+'\n\n\n')
 		index+=1
 	index=1
 	for elem in mc:
@@ -66,7 +74,7 @@ for TEST in TESTS:
 		if num_tot==0:
 			index+=1
 			continue
-		if(num_matched/num_tot > 0.8):
-			output.write("Question " +str(index) + " on Multiple Choice on " + TEST	 +": " +'\n' + " ".join(temp)+'\n\n\n')
+		if(num_matched/num_tot > accuracy):
+			output.write("Question " +str(index) + " on Multiple Choice on " + TEST	 +"with accuracy " + str(num_matched/num_tot) +": " +'\n' + " ".join(temp)+'\n\n\n')
 		index+=1
 output.close()
