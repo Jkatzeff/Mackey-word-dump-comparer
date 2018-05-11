@@ -1,4 +1,4 @@
-Matching questions with at least 0.8 in common.
+Matching questions with at least 0.9 in common.
 
 Question 3 on Free Response on cmps112-2015q4-final.tt: 
 \\lambda-calculus. Given the expression in the \\lambda-calculus\n shown at the top of each box, show the derivation order to the\n number 25 for each of normal order and applicative order\n evaluation. [1pt]\n\n +-----------------------------------------------------------+------------------------------------------------------------+\n | normal order evaluation | applicative order evaluation |\n +-----------------------------------------------------------+------------------------------------------------------------+\n |$ ( lambda x ~ . ~ ~ * ~ x ~ x ) ~ ~ ( + ~ 2 ~ 3 ) ~ ~ = $ | $ ( lambda x ~ . ~ ~ * ~ x ~ x ) ~ ~ ( + ~ 2 ~ 3 ) ~ ~ = $ |\n | | |\n | | |\n | | |\n +-----------------------------------------------------------+------------------------------------------------------------+\n\n

@@ -1,7 +1,6 @@
 import urllib.request
 import re
 import sys
-from collections import Counter
 
 #USAGE: python3 parse_midterms.py WORDDUMP OUTPUT ACCURACY
 #Accuracy matches what percentage match of past test questions
@@ -34,11 +33,8 @@ for TEST in TESTS:
 	free_response = txt.split("Multiple choice")[0]
 	multiple_choice = txt.split("Multiple choice")[1:]
 
-	# print(re.findall(r'[0-9]+\.',"".join(multiple_choice)))
-
 	fr = re.compile(r"[0-9]+\.").split("".join(free_response))[3:]
 	mc = re.compile(r"[0-9]+\.").split("".join(multiple_choice))[1:]
-	# print(fr[1])
 	index=1
 	for elem in fr:
 		num_matched = 0
