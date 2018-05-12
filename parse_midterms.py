@@ -28,7 +28,7 @@ for TEST in TESTS:
 	URL = BASE_DIR + TEST
 
 	txt = urllib.request.urlopen(URL).read()
-	txt = str(txt)
+	txt = txt.decode("ISO-8859-1")
 
 	free_response = txt.split("Multiple choice")[0]
 	multiple_choice = txt.split("Multiple choice")[1:]
@@ -58,7 +58,7 @@ for TEST in TESTS:
 			continue	
 		if(num_matched/num_tot > accuracy):
 			# print(num_matched, num_tot)
-			output.write("Question " +str(index) + " on Free Response on " + TEST +" with accuracy " + str(num_matched/num_tot) + ": " + '\n' + " ".join(temp)+'\n\n\n')
+			output.write("Question " +str(index) + " on Free Response on " + TEST +" with accuracy " + str(num_matched/num_tot) + ": " + '\n' + "".join(elem)+'\n\n\n')
 		index+=1
 	index=1
 	for elem in mc:
@@ -75,6 +75,6 @@ for TEST in TESTS:
 			index+=1
 			continue
 		if(num_matched/num_tot > accuracy):
-			output.write("Question " +str(index) + " on Multiple Choice on " + TEST	 +" with accuracy " + str(num_matched/num_tot) +": " +'\n' + " ".join(temp)+'\n\n\n')
+			output.write("Question " +str(index) + " on Multiple Choice on " + TEST	 +" with accuracy " + str(num_matched/num_tot) +": " +'\n' + "".join(elem)+'\n\n\n')
 		index+=1
 output.close()
