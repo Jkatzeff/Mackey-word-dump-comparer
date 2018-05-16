@@ -33,8 +33,10 @@ for TEST in TESTS:
 	free_response = txt.split("Multiple choice")[0]
 	multiple_choice = txt.split("Multiple choice")[1:]
 
-	fr = re.compile(r"[0-9]+\.").split("".join(free_response))[3:]
-	mc = re.compile(r"[0-9]+\.").split("".join(multiple_choice))[1:]
+	fr = re.compile(r"\n *[0-9]+\.").split("".join(free_response))[1:]
+	mc = []
+	for val in multiple_choice:
+		mc.append(re.compile(r"\n *[0-9]+\.").split("".join(val))[1:])
 	index=1
 	for elem in fr:
 		num_matched = 0
@@ -58,23 +60,24 @@ for TEST in TESTS:
 			continue	
 		if(num_matched/num_tot > accuracy):
 			# print(num_matched, num_tot)
-			output.write("Question " +str(index) + " on Free Response on " + TEST +" with accuracy " + str(num_matched/num_tot) + ": " + '\n' + "".join(elem)+'\n\n\n')
+			output.write("Question " +str(index) + " on Free Response on " + TEST +" with accuracy " + str(num_matched/num_tot) + ": " + '\n' + (len(str(index)) + 1) * " " + elem +'\n\n\n')
 		index+=1
-	index=1
-	for elem in mc:
-		num_matched = 0
-		num_tot = 0
-		temp = str(elem).strip().split()
-		for tmp in temp:
-			tmp = tmp.strip()
-			if tmp.isalpha() or tmp.isdigit():
-				if tmp in wordlist:
-					num_matched+=1
-				num_tot+=1
-		if num_tot==0:
+	for part, each in enumerate(mc):
+		index=1
+		for elem in each:
+			num_matched = 0
+			num_tot = 0
+			temp = str(elem).strip().split()
+			for tmp in temp:
+				tmp = tmp.strip()
+				if tmp.isalpha() or tmp.isdigit():
+					if tmp in wordlist:
+						num_matched+=1
+					num_tot+=1
+			if num_tot==0:
+				index+=1
+				continue
+			if(num_matched/num_tot > accuracy):
+				output.write("Question " +str(index) + " on Multiple Choice part " + str(part + 1) + " on " + TEST + " with accuracy " + str(num_matched/num_tot) +": " +'\n' + (len(str(len(each))) + 1) * " " + elem +'\n\n\n')
 			index+=1
-			continue
-		if(num_matched/num_tot > accuracy):
-			output.write("Question " +str(index) + " on Multiple Choice on " + TEST	 +" with accuracy " + str(num_matched/num_tot) +": " +'\n' + "".join(elem)+'\n\n\n')
-		index+=1
 output.close()
