@@ -1,274 +1,226 @@
-Matching questions with at least 0.8 in common.
+Matching questions with at least 0.9 in common.
 
-Question 3 on Free Response on cmps112-2015q4-final.tt with accuracy 0.9787234042553191: 
-\\lambda-calculus. Given the expression in the \\lambda-calculus\n shown at the top of each box, show the derivation order to the\n number 25 for each of normal order and applicative order\n evaluation. [1pt]\n\n +-----------------------------------------------------------+------------------------------------------------------------+\n | normal order evaluation | applicative order evaluation |\n +-----------------------------------------------------------+------------------------------------------------------------+\n |$ ( lambda x ~ . ~ ~ * ~ x ~ x ) ~ ~ ( + ~ 2 ~ 3 ) ~ ~ = $ | $ ( lambda x ~ . ~ ~ * ~ x ~ x ) ~ ~ ( + ~ 2 ~ 3 ) ~ ~ = $ |\n | | |\n | | |\n | | |\n +-----------------------------------------------------------+------------------------------------------------------------+\n\n
+Question 2 on Free Response on cmps112-2015q4-final.tt with accuracy 0.9787234042553191: 
+   \lambda-calculus.  Given the expression in the \lambda-calculus
+   shown at the top of each box, show the derivation order to the
+   number 25 for each of normal order and applicative order
+   evaluation.  [1pt]
 
+   +-----------------------------------------------------------+------------------------------------------------------------+
+   |                 normal order evaluation                   |                applicative order evaluation                |
+   +-----------------------------------------------------------+------------------------------------------------------------+
+   |$ ( lambda x ~ . ~ ~ * ~ x ~ x ) ~ ~ ( + ~ 2 ~ 3 ) ~ ~ = $ | $ ( lambda x ~ . ~ ~ * ~ x ~ x ) ~ ~ ( + ~ 2 ~ 3 ) ~ ~ = $ |
+   |                                                           |                                                            |
+   |                                                           |                                                            |
+   |                                                           |                                                            |
+   +-----------------------------------------------------------+------------------------------------------------------------+
 
-Question 20 on Free Response on cmps112-2015q4-final.tt with accuracy 1.0: 
-25\n\n
 
 
-Question 4 on Multiple Choice on cmps112-2015q4-final.tt with accuracy 0.9047619047619048: 
-What is the Ocaml type signature for the definition: let f x =\n x;;\n (A) val f : \'a -> \'a = <fun>\n (B) val f : \'a -> \'b -> \'b * \'a = <fun>\n (C) val f : \'a -> \'b -> \'b = <fun>\n (D) val f : int -> int = <fun>\n\n
+Question 4 on Multiple Choice part 1 on cmps112-2015q4-final.tt with accuracy 0.9047619047619048: 
+    What is the Ocaml type signature for the definition:   let f x =
+    x;;
+    (A) val f : 'a -> 'a = <fun>
+    (B) val f : 'a -> 'b -> 'b * 'a = <fun>
+    (C) val f : 'a -> 'b -> 'b = <fun>
+    (D) val f : int -> int = <fun>
 
 
-Question 15 on Multiple Choice on cmps112-2015q4-final.tt with accuracy 0.8333333333333334: 
-What is 6?\n (A) (apply + \'(1 2 3))\n (B) (cons + \'(1 2 3))\n (C) (list + \'(1 2 3))\n (D) (map + \'(1 2 3))\n\n
 
+Question 3 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.9411764705882353: 
+    What is type of (+) in Ocaml?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
 
-Question 22 on Multiple Choice on cmps112-2015q4-final.tt with accuracy 0.8333333333333334: 
-If $key is a key, what is the value associated with it in a hash?\n $hash{$key} %hash{$key} &hash{$key} @hash{$key}\n\n
 
 
-Question 23 on Multiple Choice on cmps112-2015q4-final.tt with accuracy 0.8181818181818182: 
-What kind of function is\n let f x y z = x + y + z;;\n (A) curried\n (B) thunked\n (C) tupled\n (D) unified\n\n
+Question 10 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.9722222222222222: 
+    What is the type of
+    let f x y z = x + y + z;;
+    (A) val f : int * int * int -> int
+    (B) val f : int * int -> int -> int
+    (C) val f : int -> int * int -> int
+    (D) val f : int -> int -> int -> int
 
 
-Question 3 on Free Response on cmps112-2015q4-test1.tt with accuracy 0.8292682926829268: 
-Define the function length, which returns the length of a list.\n Use tail-recursion: the function must use $ O ( 1 ) $ stack. Do\n not use a higher-order function.\n\n (a) Scheme. [1pt]\n > (length '(1 2 3 4 5))\n 5\n\n (b) Ocaml. [1pt]\n # length;;\n - : 'a list -> int = <fun>\n # length [1;2;3;4;5];;\n - : int = 5\n\n
 
+Question 12 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.9166666666666666: 
+    What is the signature of Ocaml's List.map?
+    (A) ('a -> 'b) -> 'a list -> 'b list
+    (B) ('a -> bool) -> 'a list -> 'a list
+    (C) ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a
+    (D) 'a list -> int
 
-Question 5 on Free Response on cmps112-2015q4-test1.tt with accuracy 0.8256880733944955: 
-Define the function fold_left: the first argument is a function to\n use to fold the list, the second argument is a unit value used to\n fold the first element, the third argument is a list. Use tail\n recursion: the function must use $ O ( 1 ) $ stack.\n\n (a) Scheme. [2pt]\n > (define (length list) (fold_left (lambda (n _) (+ n 1)) 0\n list))\n > (define (sum list) (fold_left + 0 list))\n > (length '(1 2 3 4 5))\n 5\n > (sum '(1 2 3 4 5))\n 15\n\n (b) Ocaml. [2pt]\n # fold_left;;\n - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>\n # let length list = fold_left (fun n _ -> n + 1) 0 list;;\n val length : 'a list -> int = <fun>\n # let sum list = fold_left (+) 0 list;;\n val sum : int list -> int = <fun>\n # length [1;2;3;4;5];;\n - : int = 5\n # sum [1;2;3;4;5];;\n - : int = 15\n\n
 
 
-Question 3 on Multiple Choice on cmps112-2015q4-test1.tt with accuracy 0.9230769230769231: 
-What is type of (+) in Ocaml?\n (A) int * int * int\n (B) int * int -> int\n (C) int -> int * int\n (D) int -> int -> int\n\n
 
+Question 4 on Multiple Choice part 1 on cmps112-2016q4-midterm.tt with accuracy 0.9642857142857143: 
+   In the expression (lambda (x) (+ x y))
+    (A) x is bound and y is bound.
+    (B) x is bound and y is free.
+    (C) x is free and y is bound.
+    (D) x is free and y is free.
 
-Question 5 on Multiple Choice on cmps112-2015q4-test1.tt with accuracy 0.8571428571428571: 
-In Ocaml, what is the type of [1;2;3;4]?\n (A) (list int)\n (B) int list\n (C) list->int\n (D) list<int>\n\n
 
 
-Question 9 on Multiple Choice on cmps112-2015q4-test1.tt with accuracy 0.8333333333333334: 
-What is 2?\n (A) (caar '(1 2 3))\n (B) (cadr '(1 2 3))\n (C) (cdar '(1 2 3))\n (D) (cddr '(1 2 3))\n\n
+Question 9 on Multiple Choice part 2 on cmps112-2016q4-midterm.tt with accuracy 1.0: 
+    Given:
+    # List.map ((+)3) [1;2;3];;
+    - : int list = [4; 5; 6]
+    what is the type of List.map ((+)3)?
+    (A) int -> int
+    (B) int -> int list
+    (C) int list -> int
+    (D) int list -> int list
 
 
-Question 11 on Free Response on cmps112-2015q4-test2.tt with accuracy 1.0: 
-];;\n - : float =
 
+Question 13 on Free Response on cmps112-2017q2-final.tt with accuracy 0.9032258064516129: 
+    Define the function map.
 
-Question 2 on Multiple Choice on cmps112-2015q4-test2.tt with accuracy 0.8181818181818182: 
-What is the Smalltalk expression for $ sqrt 2 $ ?\n (A) sqrt (2)\n (B) 2 sqrt\n (C) Number::sqrt 2\n (D) 2 ^ .5\n\n
+    (a) Ocaml.  [2pt]
+        # List.map;;
+        - : ('a -> 'b) -> 'a list -> 'b list = <fun>
+        # List.map ((+)6) [1;2;3;4];;
+        - : int list = [7; 8; 9; 10]
 
+    (b) Scheme.  [2pt]
+        > (map (lambda (x) (+ x 6)) '(1 2 3 4))
+        (7 8 9 10)
 
-Question 12 on Multiple Choice on cmps112-2015q4-test2.tt with accuracy 0.9428571428571428: 
-The PL/1 language allows a non-local goto directly from a function\n to a label in a function deeper down in the function call stack,\n thus returning past several levels of function calls. In Java,\n something similar can be accomplished by what statement?\n (A) goto\n (B) implements\n (C) synchronized\n (D) throw\n\n
 
 
-Question 7 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 1.0: 
-0 $\n (A) (sqrt
 
+Question 6 on Multiple Choice part 2 on cmps112-2017q2-final.tt with accuracy 1.0: 
+    Ocaml.  List.hd
+    (A) 'a -> 'a
+    (B) 'a -> 'a list
+    (C) 'a list -> 'a
+    (D) 'a list -> 'a list
 
-Question 9 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 1.0: 
-0 sqrt\n (C)
 
 
-Question 10 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 1.0: 
-718281828459045\n (D) sqrt (
+Question 1 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.9583333333333334: 
+    What is the type of f:
+    let f (x, y) = x + y;;
+    (A) f : int * int * int
+    (B) f : int * int -> int
+    (C) f : int -> int * int
+    (D) f : int -> int -> int
 
 
-Question 21 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 0.8153846153846154: 
-A C++ compiler does object-oriented dispatch via:\n (A) duck typing\n (B) heap allocated closure\n (C) type inference\n (D) virtual function table\nThe Antikythera mechanism, built ca. 150-100 BCE, is the oldest known\ncomplex scientific calculator, and is sometimes called the first known\nanalog computer, with operational instructions written in Greek.\nhttp://en.wikipedia.org/wiki/Antikythera_mechanism\n\n. To the left of each question, write the letter that\nindicates your answer. Write Z if you don\'t want to risk a wrong\nanswer. Wrong answers are worth negative points. [12pt]\n\n+--------------------------+------+------+------------+\n|number of | |\xd7 1 = | $= a$ |\n|correct answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 \xbd = | $= b$ |\n|wrong answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 0 = | 0 |\n|missing answers | | | |\n+--------------------------+------+------+------------+\n|column total | 12 | | $= c$ |\n|$ c = max ( a - b , 0 ) $ | | | |\n+--------------------------+------+------+------------+\n\n
 
+Question 2 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.9230769230769231: 
+    What is the type of g:
+    let g x y = x * y;;
+    (A) f : int * int * int
+    (B) f : int * int -> int
+    (C) f : int -> int * int
+    (D) f : int -> int -> int
 
-Question 26 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 0.8333333333333334: 
-What is 6?\n (A) (apply + \'(1 2 3))\n (B) (cons + \'(1 2 3))\n (C) (list + \'(1 2 3))\n (D) (map + \'(1 2 3))\n\n
 
 
-Question 28 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 0.9428571428571428: 
-The PL/1 language allows a non-local goto directly from a function\n to a label in a function deeper down in the function call stack,\n thus returning past several levels of function calls. In Java,\n something similar can be accomplished by what statement?\n (A) goto\n (B) implements\n (C) synchronized\n (D) throw\n\n
+Question 8 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.9166666666666666: 
+    What is (1 2 3 4)
+    (A) (apply * '(1 2 3 4))
+    (B) (cons * '(1 2 3 4))
+    (C) (foldl * '(1 2 3 4))
+    (D) (map * '(1 2 3 4))
 
 
-Question 31 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 0.967741935483871: 
-What is the type of\n let f x y z = x + y + z;;\n (A) val f : int * int * int -> int\n (B) val f : int * int -> int -> int\n (C) val f : int -> int * int -> int\n (D) val f : int -> int -> int -> int\n\n
 
+Question 3 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.9117647058823529: 
+   Scheme.  Define map.  [2pt]
+   > (map (lambda (x) (+ 5 x)) '(1 2 3 4))
+   (6 7 8 9)
+   > (map (lambda (x) (cons 5 x)) '(1 2 3 4))
+   ((5 . 1) (5 . 2) (5 . 3) (5 . 4))
 
-Question 33 on Multiple Choice on cmps112-2016q4-final.tt with accuracy 0.8888888888888888: 
-What is the signature of Ocaml\'s List.map?\n (A) (\'a -> \'b) -> \'a list -> \'b list\n (B) (\'a -> bool) -> \'a list -> \'a list\n (C) (\'a -> \'b -> \'a) -> \'a -> \'b list -> \'a\n (D) \'a list -> int\n\n'
 
 
-Question 6 on Free Response on cmps112-2016q4-midterm.tt with accuracy 0.84: 
-Ocaml. Define length and sum for a list using a \\beta-reduced\n version of the definitions. Fill in the space with an appropriate\n fun and another argument. [2pt]\n # let foldl = List.fold_left;;\n val foldl : (\'a -> \'b -> \'a) -> \'a -> \'b list -> \'a\n\n # let length = foldl\n _____________________________________________;;\n val length : \'_a list -> int\n\n # let sum = foldl _____________________________________________;;\n val sum : int list -> int\n\n
+Question 10 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9285714285714286: 
+    Type of (+)?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
 
 
-Question 7 on Free Response on cmps112-2016q4-midterm.tt with accuracy 0.8615384615384616: 
-Ocaml. Define the function zipwith that takes a function and two\n lists and returns a new list with the elements combined. Use\n failwith if the lists are not of the same length. [2pt]\n val zipwith : (\'a -> \'b -> \'c) -> \'a list -> \'b list -> \'c list\n # zipwith (+) [1;2;3;4] [5;6;7;8];;\n - : int list = [6; 8; 10; 12]\n # zipwith (+) [1;2;3;4] [5;6;7;8;9];;\n Exception: Failure "zipwith".\n # zipwith (fun a b -> a,b) [1;2;3] [\'a\';\'b\';\'c\'];;\n - : (int * char) list = [(1, \'a\'); (2, \'b\'); (3, \'c\')]\n # zipwith max [1;2;3;4] [4;3;2;1];;\n - : int list = [4; 3; 3; 4]\n\n
 
+Question 12 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9545454545454546: 
+    In the expression $ ( \lambda x . ( + x ) y ) $
+    (A) $x$ is bound and $y$ is bound.
+    (B) $x$ is bound and $y$ is free.
+    (C) $x$ is free and $y$ is bound.
+    (D) $x$ is free and $y$ is free.
 
-Question 5 on Multiple Choice on cmps112-2016q4-midterm.tt with accuracy 0.9642857142857143: 
-In the expression (lambda (x) (+ x y))\n (A) x is bound and y is bound.\n (B) x is bound and y is free.\n (C) x is free and y is bound.\n (D) x is free and y is free.\n\n
++---------------------------------+
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|jpgs/math-but-yesterday-you-said.ps
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|                                 |
+|                                 |
++---------------------------------+
 
 
-Question 8 on Multiple Choice on cmps112-2016q4-midterm.tt with accuracy 0.8235294117647058: 
-means:\n (A) The message + is sent to the number 3, the result of which is\n a function that accepts the message
 
 
-Question 11 on Multiple Choice on cmps112-2016q4-midterm.tt with accuracy 0.8333333333333334: 
-\n (D) The messages 3 and 4 are sent to the operator +.\n\n. To the left of each question, write the letter that\nindicates your answer. Write Z if you don\'t want to risk a wrong\nanswer. Wrong answers are worth negative points. [12pt]\n\n+--------------------------+------+------+------------+\n|number of | |\xd7 1 = | $= a$ |\n|correct answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 \xbd = | $= b$ |\n|wrong answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 0 = | 0 |\n|missing answers | | | |\n+--------------------------+------+------+------------+\n|column total | 12 | | $= c$ |\n|$ c = max ( a - b , 0 ) $ | | | |\n+--------------------------+------+------+------------+\n\n
+Question 3 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.0: 
+    # sqrt;;
+    (A) - : float * float = <fun>
+    (B) - : float -> float = <fun>
+    (C) - : int * int = <fun>
+    (D) - : int -> int = <fun>
 
 
-Question 14 on Multiple Choice on cmps112-2016q4-midterm.tt with accuracy 0.8571428571428571: 
-What is the Ocaml type signature of:\n (/);;\n (A) - : int * int * int\n (B) - : int * int -> int\n (C) - : int -> int * int\n (D) - : int -> int -> int\n\n
 
+Question 4 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.0: 
+    10
+    (A) (apply '+ '(1 2 3 4))
+    (B) (apply '+ (1 2 3 4))
+    (C) (apply + '(1 2 3 4))
+    (D) (apply + (1 2 3 4))
 
-Question 20 on Multiple Choice on cmps112-2016q4-midterm.tt with accuracy 1.0: 
-Given:\n # List.map ((+)3) [1;2;3];;\n - : int list = [4; 5; 6]\n what is the type of List.map ((+)3)?\n (A) int -> int\n (B) int -> int list\n (C) int list -> int\n (D) int list -> int list\n\n
 
 
-Question 9 on Free Response on cmps112-2017q2-final.tt with accuracy 0.8648648648648649: 
-Ocaml. Define the functions sum and length by filling in the\n blanks. [2pt]\n # List.fold_left;;\n - : (\'a -> \'b -> \'a) -> \'a -> \'b list -> \'a = <fun>\n\n # let sum = List.fold_left\n ________________________________________;;\n val sum : int list -> int = <fun>\n # sum [1;2;3;4;5];;\n - : int = 15\n\n # let length = List.fold_left\n ________________________________________;;\n val length : \'_a list -> int = <fun>\n # length [1;2;3;4;5];;\n - : int = 5\n\n
+Question 5 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.0: 
+    # (<) 2;;
+    (A) - : 'a -> bool = <fun>
+    (B) - : bool -> 'a = <fun>
+    (C) - : bool -> int = <fun>
+    (D) - : int -> bool = <fun>
 
 
-Question 13 on Free Response on cmps112-2017q2-final.tt with accuracy 0.8928571428571429: 
-Define the function map.\n\n (a) Ocaml. [2pt]\n # List.map;;\n - : (\'a -> \'b) -> \'a list -> \'b list = <fun>\n # List.map ((+)6) [1;2;3;4];;\n - : int list = [7; 8; 9; 10]\n\n (b) Scheme. [2pt]\n > (map (lambda (x) (+ x 6)) \'(1 2 3 4))\n (7 8 9 10)\n\n
 
+Question 3 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9230769230769231: 
+    Output of:
+    # (-);;
+    (A) - : int * int * int = <fun>
+    (B) - : int * int -> int = <fun>
+    (C) - : int -> int * int = <fun>
+    (D) - : int -> int -> int = <fun>
 
-Question 3 on Multiple Choice on cmps112-2017q2-final.tt with accuracy 0.8421052631578947: 
-How will Ocaml respond to the following statement?\n (+);;\n (A) - : int * int * int = <fun>\n (B) - : int * int -> int = <fun>\n (C) - : int -> int * int = <fun>\n (D) - : int -> int -> int = <fun>\n\n
 
 
-Question 7 on Multiple Choice on cmps112-2017q2-final.tt with accuracy 0.9: 
-What is (3 4)?\n (A) (caar \'(1 2 3 4))\n (B) (cadr \'(1 2 3 4))\n (C) (cdar \'(1 2 3 4))\n (D) (cddr \'(1 2 3 4))\n\n
+Question 5 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9090909090909091: 
+    What will print:
+    (1 2 7)
+    (A) '(1 2 ,(+ 3 4))
+    (B) ,(1 2 `(+ 3 4))
+    (C) `(1 2 '(+ 3 4))
+    (D) `(1 2 ,(+ 3 4))
 
-
-Question 11 on Multiple Choice on cmps112-2017q2-final.tt with accuracy 0.9: 
-What is 24?\n (A) (apply * \'(1 2 3 4))\n (B) (map * \'(1 2 3 4))\n (C) (cons * \'(1 2 3 4))\n (D) (list * \'(1 2 3 4))\n\n
-
-
-Question 13 on Multiple Choice on cmps112-2017q2-final.tt with accuracy 0.8974358974358975: 
-|\n+http://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/-----------+\n\n. To the left of each question, write the letter that\nindicates your answer. Write Z if you don\'t want to risk a wrong an-\nswer. Wrong answers are worth negative points. [12pt]\n\n+--------------------------+------+------+------------+\n|number of | |\xd7 1 = | $= a$ |\n|correct answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 \xbd = | $= b$ |\n|wrong answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 0 = | 0 |\n|missing answers | | | |\n+--------------------------+------+------+------------+\n|column total | 12 | | $= c$ |\n|$ c = max ( a - b , 0 ) $ | | | |\n+--------------------------+------+------+------------+\n\n
-
-
-Question 19 on Multiple Choice on cmps112-2017q2-final.tt with accuracy 1.0: 
-Ocaml. List.hd\n (A) \'a -> \'a\n (B) \'a -> \'a list\n (C) \'a list -> \'a\n (D) \'a list -> \'a list\n\n
-
-
-Question 1 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.8709677419354839: 
-Ocaml. Fill in the blanks: [2pt]\n # List.fold_left;;\n - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>\n # let sum = __________________________________________________\n val sum : int list -> int = <fun>\n # sum [1;2;3;4;5];;\n - : int = 15\n # let length = __________________________________________________\n val length : '_a list -> int = <fun>\n # length [1;2;3;4;5];;\n - : int = 5\n\n
-
-
-Question 3 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.8541666666666666: 
-Define the function zipwith that takes a function and two lists and\n uses the function to join the lists. If the lists are of different\n lengths, ignore the excess elements of the longer list. [2pt]\n # zipwith;;\n - : ('a -> 'b -> 'c) -> 'a list -> 'b list -> 'c list = <fun>\n # zipwith (+) [1;2;3] [4;5;6;7];;\n - : int list = [5; 7; 9]\n\n
-
-
-Question 11 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.8333333333333334: 
-Scheme. Write a tail-recursive function called reverse that re-\n verses a list. Do not use a higher-order function. [2pt]\n > (reverse '(1 2 3 4 5))\n (5 4 3 2 1)\n\n
-
-
-Question 13 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.8148148148148148: 
-Ocaml. Define mul' as per the project specifications. [3pt]\n # add' [1;2;3] [4;5;6;7] 0;;\n - : int list = [5; 7; 9; 7]\n # add' [4;5;6;7] [2] 0;;\n - : int list = [6; 5; 6; 7]\n # add' [9;9;9;9] [1] 0;;\n - : int list = [0; 0; 0; 0; 1]\n\n
-
-
-Question 1 on Multiple Choice on cmps112-2017q2-midterm.tt with accuracy 0.8888888888888888: 
-Replacing $ (\\lambdax~ . ~ + ~ x ~ 1) ~ 2 $ by $ ( + ~ 2 ~ 1 ) $\n is an example of\n (A) \\alpha-reduction\n (B) \\beta-reduction\n (C) \\eta-reduction\n (D) \\lambda-reduction\n\n
-
-
-Question 12 on Multiple Choice on cmps112-2017q2-midterm.tt with accuracy 0.8125: 
-How will Ocaml respond to\n # (+);;\n (A) - : int * int * int = <fun>\n (B) - : int * int -> int = <fun>\n (C) - : int -> int * int = <fun>\n (D) - : int -> int -> int = <fun>\n\n\x08+--------------------------------------+\n\x08| |\n\x08| |\n\x08| |\n\x08| |\n\x08| |\n\x08|jpgs/drag-and-drop.ps |\n\x08| |\n\x08| |\n\x08| |\n\x08| |\n\x08| |\n\x08+--------------------------------------+\n\n"
-
-
-Question 1 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 0.95: 
-What is the type of f:\n let f (x, y) = x + y;;\n (A) f : int * int * int\n (B) f : int * int -> int\n (C) f : int -> int * int\n (D) f : int -> int -> int\n\n
-
-
-Question 2 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 0.9090909090909091: 
-What is the type of g:\n let g x y = x * y;;\n (A) f : int * int * int\n (B) f : int * int -> int\n (C) f : int -> int * int\n (D) f : int -> int -> int\n\n
-
-
-Question 11 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 0.9166666666666666: 
-What is (1 2 3 4)\n (A) (apply * \'(1 2 3 4))\n (B) (cons * \'(1 2 3 4))\n (C) (foldl * \'(1 2 3 4))\n (D) (map * \'(1 2 3 4))\n\n
-
-
-Question 17 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 0.8974358974358975: 
-html----------------------------------------------------------+\n\n. To the left of each question, write the letter that\nindicates your answer. Write Z if you don\'t want to risk a wrong an-\nswer. Wrong answers are worth negative points. [12pt]\n\n+--------------------------+------+------+------------+\n|number of | |\xd7 1 = | $= a$ |\n|correct answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 \xbd = | $= b$ |\n|wrong answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 0 = | 0 |\n|missing answers | | | |\n+--------------------------+------+------+------------+\n|column total | 12 | | $= c$ |\n|$ c = max ( a - b , 0 ) $ | | | |\n+--------------------------+------+------+------------+\n\n
-
-
-Question 21 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 1.0: 
-"Lazy" evaluation is also known as __ order evaluation.\n (A) applicative\n (B) functional\n (C) normal\n (D) unified\n\n
-
-
-Question 22 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 0.8181818181818182: 
-PL/I\'s non-local goto (unwinding the function call stack several\n levels) can be evaluated in C++ and Java using:\n (A) break\n (B) continue\n (C) return\n (D) throw\n\n
-
-
-Question 27 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 1.0: 
-\n (B) a at:
-
-
-Question 28 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 1.0: 
-\n (C) a value:
-
-
-Question 29 on Multiple Choice on cmps112-2017q4-final.tt with accuracy 1.0: 
-\n (D) a x:
-
-
-Question 1 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.8888888888888888: 
-Scheme. Write a function to reverse a list. [3pt]\n > (reverse '(1 2 3 4 5))\n (5 4 3 2 1)\n > (reverse '())\n ()\n\n
-
-
-Question 2 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.9: 
-Scheme. Define map. [2pt]\n > (map (lambda (x) (+ 5 x)) '(1 2 3 4))\n (6 7 8 9)\n > (map (lambda (x) (cons 5 x)) '(1 2 3 4))\n ((5 . 1) (5 . 2) (5 . 3) (5 . 4))\n\n
-
-
-Question 7 on Multiple Choice on cmps112-2017q4-midterm.tt with accuracy 0.9: 
-What is 10?\n (A) (apply + '(1 2 3 4))\n (B) (cons + '(1 2 3 4))\n (C) (filter + '(1 2 3 4))\n (D) (foldl + '(1 2 3 4))\n\n
-
-
-Question 10 on Multiple Choice on cmps112-2017q4-midterm.tt with accuracy 0.9: 
-Type of (+)?\n (A) int * int * int\n (B) int * int -> int\n (C) int -> int * int\n (D) int -> int -> int\n\n
-
-
-Question 11 on Multiple Choice on cmps112-2017q4-midterm.tt with accuracy 0.9: 
-What is (3 4)?\n (A) (caar '(1 2 3 4))\n (B) (cadr '(1 2 3 4))\n (C) (cdar '(1 2 3 4))\n (D) (cddr '(1 2 3 4))\n\n
-
-
-Question 12 on Multiple Choice on cmps112-2017q4-midterm.tt with accuracy 0.9545454545454546: 
-In the expression $ ( \\lambda x . ( + x ) y ) $\n (A) $x$ is bound and $y$ is bound.\n (B) $x$ is bound and $y$ is free.\n (C) $x$ is free and $y$ is bound.\n (D) $x$ is free and $y$ is free.\n\n+---------------------------------+\n| |\n| |\n| |\n| |\n| |\n| |\n| |\n|jpgs/math-but-yesterday-you-said.ps\n| |\n| |\n| |\n| |\n| |\n| |\n| |\n+---------------------------------+\n\n"
-
-
-Question 3 on Multiple Choice on cmps112-2018q1-final.tt with accuracy 1.0: 
-# sqrt;;\n (A) - : float * float = <fun>\n (B) - : float -> float = <fun>\n (C) - : int * int = <fun>\n (D) - : int -> int = <fun>\n\n
-
-
-Question 4 on Multiple Choice on cmps112-2018q1-final.tt with accuracy 1.0: 
-10\n (A) (apply '+ '(1 2 3 4))\n (B) (apply '+ (1 2 3 4))\n (C) (apply + '(1 2 3 4))\n (D) (apply + (1 2 3 4))\n\n
-
-
-Question 5 on Multiple Choice on cmps112-2018q1-final.tt with accuracy 1.0: 
-# (<) 2;;\n (A) - : 'a -> bool = <fun>\n (B) - : bool -> 'a = <fun>\n (C) - : bool -> int = <fun>\n (D) - : int -> bool = <fun>\n\n
-
-
-Question 19 on Multiple Choice on cmps112-2018q1-final.tt with accuracy 0.8571428571428571: 
-What is the type of the argument of f in the Ocaml statement let f\n () = 3\n (A) null\n (B) nullptr\n (C) unit\n (D) void\n\n
-
-
-Question 25 on Multiple Choice on cmps112-2018q1-final.tt with accuracy 0.8333333333333334: 
-What is 2?\n (A) (caar (1 2 3))\n (B) (cadr (1 2 3))\n (C) (cdar (1 2 3))\n (D) (cddr (1 2 3))\n\n
-
-
-Question 2 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.8717948717948718: 
-Without using any higher-order functions, code the function fold_\n left, which will take a function, a unit, and a list, and fold the\n list.\n\n (a) Scheme. [2pt]\n > (fold_left + 0 \'(1 2 3))\n 6\n\n (b) Ocaml. [2pt]\n # fold_left;;\n - : (\'a -> \'b -> \'a) -> \'a -> \'b list -> \'a = <fun>\n # fold_left (+) 0 [1;2;3];;\n - : int = 6\n\n
-
-
-Question 3 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.8902439024390244: 
-Without using any higher-order functions, code the function find,\n which will return a value associated with a given key. Indicate\n not found as shown here. Use the sample interactions to figure out\n the structure and arguments to this function.\n\n (a) Ocaml. [3pt]\n # find;;\n - : (\'a -> \'b -> bool) -> \'a -> (\'b * \'c) list -> \'c option =\n <fun>\n # find (=) 3 [(1,2);(3,4);(5,6)];;\n - : int option = Some 4\n # find (=) 3 [(5,6);(7,8)];;\n - : int option = None\n\n (b) Scheme. Use cond and not if. Return #f if not found. [3pt]\n > (find = 3 \'((1 2) (3 4) (5 6)))\n 4\n > (find = 3 \'((5 6) (7 8)))\n #f\n\n
-
-
-Question 5 on Multiple Choice on cmps112-2018q1-midterm.tt with accuracy 0.8297872340425532: 
-A partially parameterized function, such as (+) in Ocaml, is said\n to be:\n (A) curried\n (B) raised\n (C) thunked\n (D) tupled\n\n. To the left of each question, write the letter that\nindicates your answer. Write Z if you don\'t want to risk a wrong an-\nswer. Wrong answers are worth negative points. [12pt]\n\n+--------------------------+------+------+------------+\n|number of | |\xd7 1 = | $= a$ |\n|correct answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 \xbd = | $= b$ |\n|wrong answers | | | |\n+--------------------------+------+------+------------+\n|number of | |\xd7 0 = | 0 |\n|missing answers | | | |\n+--------------------------+------+------+------------+\n|column total | 12 | | $= c$ |\n|$ c = max ( a - b , 0 ) $ | | | |\n+--------------------------+------+------+------------+\n\n
-
-
-Question 7 on Multiple Choice on cmps112-2018q1-midterm.tt with accuracy 0.875: 
-What will print:\n 5\n (A) ((lambda (a b) (+ a b)) \'(2 3))\n (B) ((lambda (a b) (+ a b)) 2 3)\n (C) (lambda (a b) (+ a b)) (2 3)\n (D) (lambda (a b) (+ a b)) 2 3\n\n
-
-
-Question 8 on Multiple Choice on cmps112-2018q1-midterm.tt with accuracy 0.9230769230769231: 
-Output of:\n # (-);;\n (A) - : int * int * int = <fun>\n (B) - : int * int -> int = <fun>\n (C) - : int -> int * int = <fun>\n (D) - : int -> int -> int = <fun>\n\n
-
-
-Question 10 on Multiple Choice on cmps112-2018q1-midterm.tt with accuracy 0.9090909090909091: 
-What will print:\n (1 2 7)\n (A) \'(1 2 ,(+ 3 4))\n (B) ,(1 2 `(+ 3 4))\n (C) `(1 2 \'(+ 3 4))\n (D) `(1 2 ,(+ 3 4))\n\n
 
 
