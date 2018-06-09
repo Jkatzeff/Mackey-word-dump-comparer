@@ -1,0 +1,546 @@
+Matching questions with at least 0.85 in common.
+
+Question 4 on Multiple Choice part 1 on cmps112-2015q4-final.tt with accuracy 0.8571428571428571: 
+    What is the Ocaml type signature for the definition:   let f x =
+    x;;
+    (A) val f : 'a -> 'a = <fun>
+    (B) val f : 'a -> 'b -> 'b * 'a = <fun>
+    (C) val f : 'a -> 'b -> 'b = <fun>
+    (D) val f : int -> int = <fun>
+
+
+
+Question 9 on Multiple Choice part 1 on cmps112-2015q4-final.tt with accuracy 0.9016393442622951: 
+    A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+
+
+Question 11 on Multiple Choice part 1 on cmps112-2015q4-final.tt with accuracy 0.8518518518518519: 
+    What is the type of car in the following?
+    let car s = match s with | x::xs -> x
+    (A) val car : 'a -> 'a = <fun>
+    (B) val car : 'a -> 'a list = <fun>
+    (C) val car : 'a list -> 'a = <fun>
+    (D) val car : 'a list -> 'a list = <fun>
+
+
+
+Question 2 on Free Response on cmps112-2015q4-test1.tt with accuracy 0.8695652173913043: 
+   Define the function filter whose first argument is a predicate and
+   whose second argument is a list.  It returns a list consisting of
+   all elements of the argument list which satisfy the predicate.  Do
+   not use a higher-order function.
+
+    (a) Scheme.  [2pt]
+        > (filter (lambda (x) (> x 0)) '(1 -1 2 -3 5 -99 8))
+        (1 2 5 8)
+        > (filter even '(1 2 3 4 5 6 7 8 9))
+        (2 4 6 8)
+
+    (b) Ocaml.  [2pt]
+        # filter;;
+        - : ('a -> bool) -> 'a list -> 'a list = <fun>
+        # filter (fun x -> x > 0) [1;-1;2;-3;5;-99;8];;
+        - : int list = [1; 2; 5; 8]
+        # filter even [1;2;3;4;5;6;7;8;9];;
+        - : int list = [2; 4; 6; 8]
+
+
+
+Question 3 on Free Response on cmps112-2015q4-test1.tt with accuracy 0.8571428571428571: 
+   Define the function length, which returns the length of a list.
+   Use tail-recursion:  the function must use $ O ( 1 ) $ stack.  Do
+   not use a higher-order function.
+
+    (a) Scheme.  [1pt]
+        > (length '(1 2 3 4 5))
+        5
+
+    (b) Ocaml.  [1pt]
+        # length;;
+        - : 'a list -> int = <fun>
+        # length [1;2;3;4;5];;
+        - : int = 5
+
+
+
+Question 5 on Free Response on cmps112-2015q4-test1.tt with accuracy 0.9203539823008849: 
+   Define the function fold_left:  the first argument is a function to
+   use to fold the list, the second argument is a unit value used to
+   fold the first element, the third argument is a list.  Use tail
+   recursion:  the function must use $ O ( 1 ) $ stack.
+
+    (a) Scheme.  [2pt]
+        > (define (length list) (fold_left (lambda (n _) (+ n 1)) 0
+        list))
+        > (define (sum list) (fold_left + 0 list))
+        > (length '(1 2 3 4 5))
+        5
+        > (sum '(1 2 3 4 5))
+        15
+
+    (b) Ocaml.  [2pt]
+        # fold_left;;
+        - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+        # let length list = fold_left (fun n _ -> n + 1) 0 list;;
+        val length : 'a list -> int = <fun>
+        # let sum list = fold_left (+) 0 list;;
+        val sum : int list -> int = <fun>
+        # length [1;2;3;4;5];;
+        - : int = 5
+        # sum [1;2;3;4;5];;
+        - : int = 15
+
+
+
+Question 3 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.9411764705882353: 
+    What is type of (+) in Ocaml?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+
+
+Question 4 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.8571428571428571: 
+    What is?
+    (car (cdr (cons '(1 2 3) '(4 5 6))))
+    (A) '(1 2 3)
+    (B) '(4 5 6)
+    (C) 1
+    (D) 4
+
+
+
+Question 5 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.875: 
+    In Ocaml, what is the type of [1;2;3;4]?
+    (A) (list int)
+    (B) int list
+    (C) list->int
+    (D) list<int>
+
+
+
+Question 4 on Free Response on cmps112-2015q4-test2.tt with accuracy 0.90625: 
+   Smalltalk.  Define a block called sum which when sent the value:
+   message with an array argument, returns the sum of the elements of
+   the array.  [2pt]
+
+   st> sum value: #(1 2 3 4 5).
+   15
+
+
+
+Question 12 on Multiple Choice part 1 on cmps112-2015q4-test2.tt with accuracy 0.8518518518518519: 
+    If we define the block sum := [:i :j| i + j] in Smalltalk, how
+    might we obtain the number 7?
+    (A) 3 4 sum
+    (B) 3 sum: 4
+    (C) sum 3 value 4 value
+    (D) sum value: 3 value: 4
+
+
+
+
+Question 1 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.9016393442622951: 
+    A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+
+
+Question 10 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.9722222222222222: 
+    What is the type of
+    let f x y z = x + y + z;;
+    (A) val f : int * int * int -> int
+    (B) val f : int * int -> int -> int
+    (C) val f : int -> int * int -> int
+    (D) val f : int -> int -> int -> int
+
+
+
+Question 11 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.8571428571428571: 
+    Which expression causes a list of length zero to be passed into
+    the function f?
+    (A) (f '())
+    (B) (f ())
+    (C) (f null?)
+    (D) (f nullptr)
+
+
+
+Question 11 on Free Response on cmps112-2016q4-midterm.tt with accuracy 0.8809523809523809: 
+    Scheme.  Define the functions map and filter.  Do not use higher-
+   order functions.
+
+   (a) map [1pt]
+       > (map (lambda (n) (+ 1 n)) '(3 6 9))
+       (4 7 10)
+
+   (b) filter [2pt]
+       > (filter (lambda (n) (< n 4)) '(1 2 3 4 5 6 7))
+       (1 2 3)
+
+
+
+
+Question 9 on Multiple Choice part 2 on cmps112-2016q4-midterm.tt with accuracy 1.0: 
+    Given:
+    # List.map ((+)3) [1;2;3];;
+    - : int list = [4; 5; 6]
+    what is the type of List.map ((+)3)?
+    (A) int -> int
+    (B) int -> int list
+    (C) int list -> int
+    (D) int list -> int list
+
+
+
+Question 9 on Free Response on cmps112-2017q2-final.tt with accuracy 0.8947368421052632: 
+   Ocaml.  Define the functions sum and length by filling in the
+   blanks.  [2pt]
+   # List.fold_left;;
+   - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+
+   # let sum = List.fold_left
+   ________________________________________;;
+   val sum : int list -> int = <fun>
+   # sum [1;2;3;4;5];;
+   - : int = 15
+
+   # let length = List.fold_left
+   ________________________________________;;
+   val length : '_a list -> int = <fun>
+   # length [1;2;3;4;5];;
+   - : int = 5
+
+
+
+Question 13 on Free Response on cmps112-2017q2-final.tt with accuracy 0.8709677419354839: 
+    Define the function map.
+
+    (a) Ocaml.  [2pt]
+        # List.map;;
+        - : ('a -> 'b) -> 'a list -> 'b list = <fun>
+        # List.map ((+)6) [1;2;3;4];;
+        - : int list = [7; 8; 9; 10]
+
+    (b) Scheme.  [2pt]
+        > (map (lambda (x) (+ x 6)) '(1 2 3 4))
+        (7 8 9 10)
+
+
+
+
+Question 5 on Multiple Choice part 1 on cmps112-2017q2-final.tt with accuracy 0.9016393442622951: 
+    A closure is:
+    (A) A special field of a structure or class used to point at a
+        base class when implementing shared multiple inheritance.
+    (B) A special type declaration in Ocaml used to distinguish sum
+        types from product types.
+    (C) A structure on the heap, used to hold variables of an outer
+        function when referenced by an inner function.
+    (D) A table used to dynamically dispatch virtual functions in an
+        object-oriented environment.
+
+
+
+Question 7 on Multiple Choice part 1 on cmps112-2017q2-final.tt with accuracy 0.9: 
+    What is (3 4)?
+    (A) (caar '(1 2 3 4))
+    (B) (cadr '(1 2 3 4))
+    (C) (cdar '(1 2 3 4))
+    (D) (cddr '(1 2 3 4))
+
+
+
+Question 10 on Multiple Choice part 1 on cmps112-2017q2-final.tt with accuracy 0.8823529411764706: 
+    In Prolog and Scheme, type checking is:
+    (A) strong and dynamic
+    (B) strong and static
+    (C) weak and dynamic
+    (D) weak and static
+
+
+
+Question 11 on Multiple Choice part 1 on cmps112-2017q2-final.tt with accuracy 0.9: 
+    What is 24?
+    (A) (apply * '(1 2 3 4))
+    (B) (map * '(1 2 3 4))
+    (C) (cons * '(1 2 3 4))
+    (D) (list * '(1 2 3 4))
+
+
+
+Question 6 on Multiple Choice part 2 on cmps112-2017q2-final.tt with accuracy 1.0: 
+    Ocaml.  List.hd
+    (A) 'a -> 'a
+    (B) 'a -> 'a list
+    (C) 'a list -> 'a
+    (D) 'a list -> 'a list
+
+
+
+Question 2 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.9032258064516129: 
+   Ocaml.  Fill in the blanks:  [2pt]
+   # List.fold_left;;
+   - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+   # let sum = __________________________________________________
+   val sum : int list -> int = <fun>
+   # sum [1;2;3;4;5];;
+   - : int = 15
+   # let length = __________________________________________________
+   val length : '_a list -> int = <fun>
+   # length [1;2;3;4;5];;
+   - : int = 5
+
+
+
+Question 1 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.9583333333333334: 
+    What is the type of f:
+    let f (x, y) = x + y;;
+    (A) f : int * int * int
+    (B) f : int * int -> int
+    (C) f : int -> int * int
+    (D) f : int -> int -> int
+
+
+
+Question 2 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.9230769230769231: 
+    What is the type of g:
+    let g x y = x * y;;
+    (A) f : int * int * int
+    (B) f : int * int -> int
+    (C) f : int -> int * int
+    (D) f : int -> int -> int
+
+
+
+Question 8 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.9166666666666666: 
+    What is (1 2 3 4)
+    (A) (apply * '(1 2 3 4))
+    (B) (cons * '(1 2 3 4))
+    (C) (foldl * '(1 2 3 4))
+    (D) (map * '(1 2 3 4))
+
+
+
+Question 9 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.8823529411764706: 
+    In Scheme and Smalltalk, type checking is:
+    (A) strong and dynamic
+    (B) strong and static
+    (C) weak and dynamic
+    (D) weak and static
+
+
+
+Question 3 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.8529411764705882: 
+   Scheme.  Define map.  [2pt]
+   > (map (lambda (x) (+ 5 x)) '(1 2 3 4))
+   (6 7 8 9)
+   > (map (lambda (x) (cons 5 x)) '(1 2 3 4))
+   ((5 . 1) (5 . 2) (5 . 3) (5 . 4))
+
+
+
+Question 7 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9: 
+    What is 10?
+    (A) (apply + '(1 2 3 4))
+    (B) (cons + '(1 2 3 4))
+    (C) (filter + '(1 2 3 4))
+    (D) (foldl + '(1 2 3 4))
+
+
+
+Question 10 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9285714285714286: 
+    Type of (+)?
+    (A) int * int * int
+    (B) int * int -> int
+    (C) int -> int * int
+    (D) int -> int -> int
+
+
+
+Question 11 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9: 
+    What is (3 4)?
+    (A) (caar '(1 2 3 4))
+    (B) (cadr '(1 2 3 4))
+    (C) (cdar '(1 2 3 4))
+    (D) (cddr '(1 2 3 4))
+
+
+
+Question 1 on Free Response on cmps112-2018q1-final.tt with accuracy 0.8695652173913043: 
+   Smalltalk.  Define a block sum whose value: message returns the sum
+   of the Numbers of an array.  [2pt]
+   st> sum1 value: #(1 2 3 4 5).
+   15
+
+
+
+Question 2 on Free Response on cmps112-2018q1-final.tt with accuracy 0.8648648648648649: 
+   Without using higher-order functions, define sum which returns the
+   sum of numbers in a list.
+
+    (a) Ocaml.  [2pt]
+        # sum;;
+        - : int list -> int = <fun>
+        # sum [1;2;3;4;5];;
+        - : int = 15
+
+    (b) Scheme.  [2pt]
+        > (sum '(1 2 3 4 5))
+        15
+
+    (c) Prolog.  [2pt]
+        | ?- sum([1,2,3,4,5],N).
+        N = 15
+        yes
+
+
+
+Question 3 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.0: 
+    # sqrt;;
+    (A) - : float * float = <fun>
+    (B) - : float -> float = <fun>
+    (C) - : int * int = <fun>
+    (D) - : int -> int = <fun>
+
+
+
+Question 4 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.0: 
+    10
+    (A) (apply '+ '(1 2 3 4))
+    (B) (apply '+ (1 2 3 4))
+    (C) (apply + '(1 2 3 4))
+    (D) (apply + (1 2 3 4))
+
+
+
+Question 5 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.0: 
+    # (<) 2;;
+    (A) - : 'a -> bool = <fun>
+    (B) - : bool -> 'a = <fun>
+    (C) - : bool -> int = <fun>
+    (D) - : int -> bool = <fun>
+
+
+
+Question 12 on Multiple Choice part 2 on cmps112-2018q1-final.tt with accuracy 0.9285714285714286: 
+    Is half of two plus two equal to two or three?
+    (A) two
+    (B) three
+    (C) yes
+    (D) no
+                     +--------------------------+
+                     |                          |
+                     |                          |
+                     |                          |
+                     |                          |
+                     |                          |
+                     |jpgs/functional-programming-joke.ps
+                     |                          |
+                     |                          |
+                     |                          |
+                     |                          |
+                     |                          |
+                     +--------------------------+
+
+
+
+
+Question 3 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.8536585365853658: 
+   Without using any higher-order functions, code the function fold_
+   left, which will take a function, a unit, and a list, and fold the
+   list.
+
+   (a) Scheme.  [2pt]
+      > (fold_left + 0 '(1 2 3))
+      6
+
+   (b) Ocaml.  [2pt]
+      # fold_left;;
+      - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+      # fold_left (+) 0 [1;2;3];;
+      - : int = 6
+
+
+
+Question 5 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.9183673469387755: 
+   Ocaml.  Define merge which takes a comparison function and two
+   sorted lists and merges the two lists into a single sorted list.
+   [3pt]
+   # merge;;
+   - : ('a -> 'a -> bool) -> 'a list -> 'a list -> 'a list = <fun>
+   # merge (>) [9;5;1] [4;8;2];;
+   - : int list = [9; 5; 4; 8; 2; 1]
+   # merge (<) [1;5;9] [2;4;7];;
+   - : int list = [1; 2; 4; 5; 7; 9]
+   # merge (<) [] [];;
+   - : 'a list = []
+
+
+
+Question 4 on Multiple Choice part 1 on cmps112-2018q1-midterm.tt with accuracy 0.9285714285714286: 
+   Smalltalk's type system is:
+    (A) strong and dynamic
+    (B) strong and static
+    (C) weak and dynamic
+    (D) weak and static
+
+
+
+Question 2 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9: 
+    What will print:
+    5
+    (A) ((lambda (a b) (+ a b)) '(2 3))
+    (B) ((lambda (a b) (+ a b)) 2 3)
+    (C) (lambda (a b) (+ a b)) (2 3)
+    (D) (lambda (a b) (+ a b)) 2 3
+
+
+
+Question 3 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9230769230769231: 
+    Output of:
+    # (-);;
+    (A) - : int * int * int = <fun>
+    (B) - : int * int -> int = <fun>
+    (C) - : int -> int * int = <fun>
+    (D) - : int -> int -> int = <fun>
+
+
+
+Question 5 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9090909090909091: 
+    What will print:
+    (1 2 7)
+    (A) '(1 2 ,(+ 3 4))
+    (B) ,(1 2 `(+ 3 4))
+    (C) `(1 2 '(+ 3 4))
+    (D) `(1 2 ,(+ 3 4))
+
+
+
+Question 12 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9285714285714286: 
+    Ocaml's type system is:
+    (A) strong and dynamic
+    (B) strong and static
+    (C) weak and dynamic
+    (D) weak and static
+
+
+
+

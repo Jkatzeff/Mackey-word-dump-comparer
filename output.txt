@@ -1,4 +1,4 @@
-Matching questions with at least 0.9 in common.
+Matching questions with at least 0.85 in common.
 
 Question 2 on Free Response on cmps112-2015q4-final.tt with accuracy 0.9787234042553191: 
    \lambda-calculus.  Given the expression in the \lambda-calculus
@@ -36,6 +36,49 @@ Question 3 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.
 
 
 
+Question 4 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.8571428571428571: 
+    What is?
+    (car (cdr (cons '(1 2 3) '(4 5 6))))
+    (A) '(1 2 3)
+    (B) '(4 5 6)
+    (C) 1
+    (D) 4
+
+
+
+Question 5 on Multiple Choice part 1 on cmps112-2015q4-test1.tt with accuracy 0.875: 
+    In Ocaml, what is the type of [1;2;3;4]?
+    (A) (list int)
+    (B) int list
+    (C) list->int
+    (D) list<int>
+
+
+
+Question 11 on Multiple Choice part 1 on cmps112-2015q4-test2.tt with accuracy 0.9: 
+    The PL/1 language allows a non-local goto directly from a function
+    to a label in a function deeper down in the function call stack,
+    thus returning past several levels of function calls.  In Java,
+    something similar can be accomplished by what statement?
+    (A) goto
+    (B) implements
+    (C) synchronized
+    (D) throw
+
+
+
+Question 7 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.9: 
+    The PL/1 language allows a non-local goto directly from a function
+    to a label in a function deeper down in the function call stack,
+    thus returning past several levels of function calls.  In Java,
+    something similar can be accomplished by what statement?
+    (A) goto
+    (B) implements
+    (C) synchronized
+    (D) throw
+
+
+
 Question 10 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0.9722222222222222: 
     What is the type of
     let f x y z = x + y + z;;
@@ -56,12 +99,38 @@ Question 12 on Multiple Choice part 2 on cmps112-2016q4-final.tt with accuracy 0
 
 
 
+Question 7 on Free Response on cmps112-2016q4-midterm.tt with accuracy 0.8676470588235294: 
+   Ocaml.  Define the function zipwith that takes a function and two
+   lists and returns a new list with the elements combined.  Use
+   failwith if the lists are not of the same length.  [2pt]
+   val zipwith : ('a -> 'b -> 'c) -> 'a list -> 'b list -> 'c list
+   # zipwith (+) [1;2;3;4] [5;6;7;8];;
+   - : int list = [6; 8; 10; 12]
+   # zipwith (+) [1;2;3;4] [5;6;7;8;9];;
+   Exception: Failure "zipwith".
+   # zipwith (fun a b -> a,b) [1;2;3] ['a';'b';'c'];;
+   - : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
+   # zipwith max [1;2;3;4] [4;3;2;1];;
+   - : int list = [4; 3; 3; 4]
+
+
+
 Question 4 on Multiple Choice part 1 on cmps112-2016q4-midterm.tt with accuracy 0.9642857142857143: 
    In the expression (lambda (x) (+ x y))
     (A) x is bound and y is bound.
     (B) x is bound and y is free.
     (C) x is free and y is bound.
     (D) x is free and y is free.
+
+
+
+Question 3 on Multiple Choice part 2 on cmps112-2016q4-midterm.tt with accuracy 0.8888888888888888: 
+    What is the Ocaml type signature of:
+    (/);;
+    (A) - : int * int * int
+    (B) - : int * int -> int
+    (C) - : int -> int * int
+    (D) - : int -> int -> int
 
 
 
@@ -74,6 +143,26 @@ Question 9 on Multiple Choice part 2 on cmps112-2016q4-midterm.tt with accuracy 
     (B) int -> int list
     (C) int list -> int
     (D) int list -> int list
+
+
+
+Question 9 on Free Response on cmps112-2017q2-final.tt with accuracy 0.868421052631579: 
+   Ocaml.  Define the functions sum and length by filling in the
+   blanks.  [2pt]
+   # List.fold_left;;
+   - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+
+   # let sum = List.fold_left
+   ________________________________________;;
+   val sum : int list -> int = <fun>
+   # sum [1;2;3;4;5];;
+   - : int = 15
+
+   # let length = List.fold_left
+   ________________________________________;;
+   val length : '_a list -> int = <fun>
+   # length [1;2;3;4;5];;
+   - : int = 5
 
 
 
@@ -93,12 +182,66 @@ Question 13 on Free Response on cmps112-2017q2-final.tt with accuracy 0.90322580
 
 
 
+Question 7 on Multiple Choice part 1 on cmps112-2017q2-final.tt with accuracy 0.9: 
+    What is (3 4)?
+    (A) (caar '(1 2 3 4))
+    (B) (cadr '(1 2 3 4))
+    (C) (cdar '(1 2 3 4))
+    (D) (cddr '(1 2 3 4))
+
+
+
+Question 11 on Multiple Choice part 1 on cmps112-2017q2-final.tt with accuracy 0.9: 
+    What is 24?
+    (A) (apply * '(1 2 3 4))
+    (B) (map * '(1 2 3 4))
+    (C) (cons * '(1 2 3 4))
+    (D) (list * '(1 2 3 4))
+
+
+
 Question 6 on Multiple Choice part 2 on cmps112-2017q2-final.tt with accuracy 1.0: 
     Ocaml.  List.hd
     (A) 'a -> 'a
     (B) 'a -> 'a list
     (C) 'a list -> 'a
     (D) 'a list -> 'a list
+
+
+
+Question 2 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.8709677419354839: 
+   Ocaml.  Fill in the blanks:  [2pt]
+   # List.fold_left;;
+   - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+   # let sum = __________________________________________________
+   val sum : int list -> int = <fun>
+   # sum [1;2;3;4;5];;
+   - : int = 15
+   # let length = __________________________________________________
+   val length : '_a list -> int = <fun>
+   # length [1;2;3;4;5];;
+   - : int = 5
+
+
+
+Question 4 on Free Response on cmps112-2017q2-midterm.tt with accuracy 0.8541666666666666: 
+   Define the function zipwith that takes a function and two lists and
+   uses the function to join the lists.  If the lists are of different
+   lengths, ignore the excess elements of the longer list.  [2pt]
+   # zipwith;;
+   - : ('a -> 'b -> 'c) -> 'a list -> 'b list -> 'c list = <fun>
+   # zipwith (+) [1;2;3] [4;5;6;7];;
+   - : int list = [5; 7; 9]
+
+
+
+Question 1 on Multiple Choice part 1 on cmps112-2017q2-midterm.tt with accuracy 0.9: 
+    Replacing $ (\lambdax~ . ~ + ~ x ~ 1) ~  2 $ by $ ( + ~ 2 ~ 1 ) $
+    is an example of
+    (A) \alpha-reduction
+    (B) \beta-reduction
+    (C) \eta-reduction
+    (D) \lambda-reduction
 
 
 
@@ -131,6 +274,25 @@ Question 8 on Multiple Choice part 1 on cmps112-2017q4-final.tt with accuracy 0.
 
 
 
+Question 5 on Multiple Choice part 2 on cmps112-2017q4-final.tt with accuracy 0.875: 
+    PL/I's non-local goto (unwinding the function call stack several
+    levels) can be evaluated in C++ and Java using:
+    (A) break
+    (B) continue
+    (C) return
+    (D) throw
+
+
+
+Question 2 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.9: 
+   Scheme.  Write a function to reverse a list.  [3pt]
+   > (reverse '(1 2 3 4 5))
+   (5 4 3 2 1)
+   > (reverse '())
+   ()
+
+
+
 Question 3 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.9117647058823529: 
    Scheme.  Define map.  [2pt]
    > (map (lambda (x) (+ 5 x)) '(1 2 3 4))
@@ -140,12 +302,30 @@ Question 3 on Free Response on cmps112-2017q4-midterm.tt with accuracy 0.9117647
 
 
 
+Question 7 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9: 
+    What is 10?
+    (A) (apply + '(1 2 3 4))
+    (B) (cons + '(1 2 3 4))
+    (C) (filter + '(1 2 3 4))
+    (D) (foldl + '(1 2 3 4))
+
+
+
 Question 10 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9285714285714286: 
     Type of (+)?
     (A) int * int * int
     (B) int * int -> int
     (C) int -> int * int
     (D) int -> int -> int
+
+
+
+Question 11 on Multiple Choice part 1 on cmps112-2017q4-midterm.tt with accuracy 0.9: 
+    What is (3 4)?
+    (A) (caar '(1 2 3 4))
+    (B) (cadr '(1 2 3 4))
+    (C) (cdar '(1 2 3 4))
+    (D) (cddr '(1 2 3 4))
 
 
 
@@ -201,6 +381,70 @@ Question 5 on Multiple Choice part 1 on cmps112-2018q1-final.tt with accuracy 1.
     (B) - : bool -> 'a = <fun>
     (C) - : bool -> int = <fun>
     (D) - : int -> bool = <fun>
+
+
+
+Question 1 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.8709677419354839: 
+   Without using any higher-order functions, code the function re-
+   verse, which will reverse a list.
+
+   (a) Scheme.  [2pt]
+      > (reverse '(1 2 3 4))
+      (4 3 2 1)
+
+   (b) Ocaml.  [2pt]
+      # reverse [1;2;3;4];;
+      - : int list = [4; 3; 2; 1]
+
+
+
+Question 3 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.8780487804878049: 
+   Without using any higher-order functions, code the function fold_
+   left, which will take a function, a unit, and a list, and fold the
+   list.
+
+   (a) Scheme.  [2pt]
+      > (fold_left + 0 '(1 2 3))
+      6
+
+   (b) Ocaml.  [2pt]
+      # fold_left;;
+      - : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+      # fold_left (+) 0 [1;2;3];;
+      - : int = 6
+
+
+
+Question 4 on Free Response on cmps112-2018q1-midterm.tt with accuracy 0.896551724137931: 
+   Without using any higher-order functions, code the function find,
+   which will return a value associated with a given key.  Indicate
+   not found as shown here.  Use the sample interactions to figure out
+   the structure and arguments to this function.
+
+   (a) Ocaml.  [3pt]
+      # find;;
+      - : ('a -> 'b -> bool) -> 'a -> ('b * 'c) list -> 'c option =
+      <fun>
+      # find (=) 3 [(1,2);(3,4);(5,6)];;
+      - : int option = Some 4
+      # find (=) 3 [(5,6);(7,8)];;
+      - : int option = None
+
+   (b) Scheme.  Use cond and not if.  Return #f if not found.  [3pt]
+      > (find = 3 '((1 2) (3 4) (5 6)))
+      4
+      > (find = 3 '((5 6) (7 8)))
+      #f
+
+
+
+Question 2 on Multiple Choice part 2 on cmps112-2018q1-midterm.tt with accuracy 0.9: 
+    What will print:
+    5
+    (A) ((lambda (a b) (+ a b)) '(2 3))
+    (B) ((lambda (a b) (+ a b)) 2 3)
+    (C) (lambda (a b) (+ a b)) (2 3)
+    (D) (lambda (a b) (+ a b)) 2 3
 
 
 
