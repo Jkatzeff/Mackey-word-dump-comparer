@@ -2,7 +2,7 @@ import urllib.request
 import re
 import sys
 
-#USAGE: python3 parse_midterms.py WORDDUMP OUTPUT ACCURACY
+#USAGE: python3 parse_midterms.py WORDDUMP OUTPUT ACCURACY [104a or 112]
 #Accuracy matches what percentage match of past test questions
 #IE: 0.8 would match test questions that 80% of the words are on this word dump
 
@@ -19,11 +19,31 @@ output.write("Matching questions with at least " + str(accuracy) +" in common." 
 
 for i in range(len(wordlist)):
 	wordlist[i] = wordlist[i].strip()
-BASE_DIR = "https://www2.ucsc.edu/courses/cmps112-wm/:/Old-Exams/"
-TESTS = ["cmps112-2015q4-final.tt", "cmps112-2015q4-test1.tt", "cmps112-2015q4-test2.tt", 
+BASE_DIR = ""
+TESTS = []
+if sys.argv[4] == "112":
+	BASE_DIR = "https://www2.ucsc.edu/courses/cmps112-wm/:/Old-Exams/"
+	TESTS = ["cmps112-2015q4-final.tt", "cmps112-2015q4-test1.tt", "cmps112-2015q4-test2.tt", 
 		 "cmps112-2016q4-final.tt", "cmps112-2016q4-midterm.tt", "cmps112-2017q2-final.tt",
 		 "cmps112-2017q2-midterm.tt","cmps112-2017q4-final.tt","cmps112-2017q4-midterm.tt",
 		 "cmps112-2018q1-final.tt","cmps112-2018q1-midterm.tt"]
+elif sys.argv[4] == "104a":
+	BASE_DIR = "https://www2.ucsc.edu/courses/cmps104a-wm/:/Old-Exams/"
+	TESTS = ["cmps104a-2015q4-final.tt",
+	"cmps104a-2015q4-test1.tt",
+	"cmps104a-2015q4-test2.tt",
+	"cmps104a-2016q2-final.tt",
+	"cmps104a-2016q2-test1.tt",
+	"cmps104a-2016q2-test2.tt",
+	"cmps104a-2016q4-final.tt",
+	"cmps104a-2016q4-midterm.tt",
+	"cmps104a-2017q2-final.tt",
+	"cmps104a-2017q2-midterm.tt",
+	"cmps104a-2017q4-final.tt",
+	"cmps104a-2017q4-midterm.tt",
+	"cmps104a-2018q2-midterm.tt"]
+else:
+	sys.exit("104a or 112 only")
 for TEST in TESTS:
 	URL = BASE_DIR + TEST
 

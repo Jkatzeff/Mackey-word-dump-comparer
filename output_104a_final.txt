@@ -1,0 +1,801 @@
+Matching questions with at least 0.85 in common.
+
+Question 2 on Free Response on cmps104a-2015q4-final.tt with accuracy 0.8863636363636364: 
+   Basic blocks.
+     (a) Given the code shown in the box, draw a horizontal line
+         immediately above the leader of each basic block, thus
+         separating it from the last instruction in the preceding
+         basic block.  Number the basic blocks in sequence as 1, 2,
+         ..., etc.  in the same order as the instructions appear.
+         [1pt]
+     (b) Draw a flow diagram with each circle in the diagram having
+         the number of a basic block, and with arrow showing flow of
+         control.  [1pt]
+     (c) Draw the dominator tree with solid arrows showing the dom
+         relationship.  Draw a dotted arrow showing the back edge.
+         Write an asterisk next to the head of the natural loop.
+         [1pt]
+
+    +--------------------------+       |                   |                   |
+    |fac:   f = 1              |  (a)  |        (b)        |        (c)        |
+    |       n = 1              |       |                   |                   |
+    |do:    if (n > 5) goto od |       |                   |                   |
+    |       r1 = f             |       |                   |                   |
+    |       r1 *= n            |       |                   |                   |
+    |       f = r1             |       |                   |                   |
+    |       r2 = n             |       |                   |                   |
+    |       r2 += 1            |       |                   |                   |
+    |       n = r1             |       |                   |                   |
+    |       goto do            |       |                   |                   |
+    |od:    call prt (f)       |       |                   |                   |
+    |       return             |       |                   |                   |
+    +--------------------------+       |                   |                   |
+
+
+
+Question 3 on Free Response on cmps104a-2015q4-final.tt with accuracy 0.9090909090909091: 
+   Given a function prolog listed in the box at the left, write code
+    using the movq and popq instructions for the epilog immediately
+    before the ret instruction.  [1pt]
+
+    prolog:                        epilog:
+              pushq   %rbp
+              movq    %rsp, %rbp
+              subq    $80, %rsp              ret
+
+
+
+Question 10 on Multiple Choice part 1 on cmps104a-2015q4-final.tt with accuracy 0.875: 
+    The intersection of the set of LALR(1) grammars with the set of
+    ambiguous grammars is:
+    (A) a non-empty subset of the set of context-free grammars.
+    (B) identical to the set of LL(k) grammars.
+    (C) the empty set.
+    (D) the same as the set of context-free grammars.
+
+
+
+Question 6 on Multiple Choice part 2 on cmps104a-2015q4-final.tt with accuracy 0.9354838709677419: 
+    The x86-64 has $x$ integer registers, each of which hold $y$ bits.
+    (A) $ x =  8 ~ ~ roman and ~ ~ y = 16 $
+    (B) $ x =  8 ~ ~ roman and ~ ~ y = 32 $
+    (C) $ x = 16 ~ ~ roman and ~ ~ y = 32 $
+    (D) $ x = 16 ~ ~ roman and ~ ~ y = 64 $
+
+
+
+Question 1 on Free Response on cmps104a-2015q4-test1.tt with accuracy 0.88: 
+   Draw abstract syntax trees for each of the following C
+    expressions:  [3pt]
+
+    +--------------------+---------------------+---------------------+
+    | a * b / c * d - e  |    a = b * c + d    |  a + b / c + d * e  |
+    +--------------------+---------------------+---------------------+
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    |                    |                     |                     |
+    +--------------------+---------------------+---------------------+
+
+
+
+Question 4 on Free Response on cmps104a-2015q4-test1.tt with accuracy 0.9473684210526315: 
+   Given the NFA shown here, compute the $\epsilon$-closure of each
+    state and fill in the table.  [2pt]
+
+                                                                          +-----------+--------------------------+
+                                                                          | state $s$ | $\epsilon$-closure($s$)  |
+    .PS 3i                                                                +-----------+--------------------------+
+    arrowwid = 0.1                                                        |     1     |                          |
+    arrowht = 0.2                                                         +-----------+--------------------------+
+    S0: circle invis; move right movewid                                  |     2     |                          |
+    S1: circle "1"; move right 2*movewid                                  +-----------+--------------------------+
+    S3: circle "3"; move right 2*movewid                                  |     3     |                          |
+    S6: circle "6"; move right 2*movewid                                  +-----------+--------------------------+
+    S8: circle "8"; circle rad circlerad-.075 at S8; move right 2*movewid |     4     |                          |
+    circle invis                                                          +-----------+--------------------------+
+    move up 2*moveht from S3; S2: circle "2"                              |     5     |                          |
+    move up 2*moveht from S6; S5: circle "5"                              +-----------+--------------------------+
+    move down 2*moveht from S3; S4: circle "4"                            |     6     |                          |
+    move down 2*moveht from S6; S7: circle "7"                            +-----------+--------------------------+
+    arrow from S0 to S1 chop                                              |     7     |                          |
+    arrow "\[*e]" above from S1 to S2 chop                                +-----------+--------------------------+
+    arrow "\[*e]" above from S1 to S3 chop                                |     8     |                          |
+    arrow "\[*e]" above from S1 to S4 chop                                +-----------+--------------------------+
+    arrow "a" below from S2 to S5 chop                                    |           |                          |
+    arrow "b" above from S3 to S6 chop                                    |           |                          |
+    arrow "c" above from S4 to S7 chop                                    |           |                          |
+    arrow "\[*e]" above from S5 to S8 chop                                |           |                          |
+    arrow "\[*e]" above from S6 to S8 chop                                |           |                          |
+    arrow "x" above from S7 to S8 chop                                    |           |                          |
+    arrow "b" above from S3 to S7 chop                                    |           |                          |
+    SX: circle invis at 1/2 between S2 and S5                             |           |                          |
+    spline from S5.nw then to SX.n+(0,moveht/2) then to S2.ne ->          |           |                          |
+    "\[*e]" at SX+(0,moveht)                                              |           |                          |
+    .PE                                                                   |           |                          |
+                                                                          |           |                          |
+
+
+
+Question 8 on Free Response on cmps104a-2015q4-test1.tt with accuracy 0.9: 
+   Draw deterministic finite automata for each of the following
+    regular expressions.  Use the minimum possible number of states.
+    [2pt]
+
+     (a) ab*c|d
+
+     (b) a+b+c+
+
+
+
+
+Question 4 on Free Response on cmps104a-2015q4-test2.tt with accuracy 0.875: 
+   According to the specifications of project 2, draw abstract syntax
+    trees for the following.  Show the root at the top and draw lines
+    between parent and child, but not between siblings.  [4pt]
+
+    +---------------------------------------------+----------------------------------------------+
+    |int y = 4;                                   | if (x < 6) { y = 3; z = 2; } else { int o; } |
+    |int z = 8;                                   | while (i < 6) i = i + 1;                     |
+    |int a = y + z;                               |                                              |
+    |puti (a + 6);                                |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    |                                             |                                              |
+    +---------------------------------------------+----------------------------------------------+
+
+
+
+Question 7 on Free Response on cmps104a-2016q2-final.tt with accuracy 0.9382022471910112: 
+   Basic blocks.
+     (a) Given the code shown in the box,
+         draw a horizontal line immediately above the leader of
+         each basic block, thus separating it from the last instruction
+         in the preceding basic block.
+         Number the basic blocks in sequence as 1, 2, ..., etc.
+         in the same order as the instructions appear.
+         [1pt]
+     (b) Draw a data flow diagram with each circle in the diagram having
+         the number of a basic block,
+         and with arrow showing flow of control.
+         Draw a follow link with a downward arrow
+         and a branch link with an arrow that starts out from the
+         side of the source block.
+         [2pt]
+     (c) Draw the dominator tree with solid downward arrows showing the
+         dom
+         relationship.
+         The root should be at the top of the diagram.
+         Draw a dotted arrow showing the back edge.
+         Write an asterisk next to the head of the natural loop.
+         [2pt]
+
+    +----------------------------+----------------------+----------------------+
+    |         (a)                |         (b)          |         (c)          |
+    |collatz: param n            |                      |                      |
+    |         c = 0              |                      |                      |
+    |loop:    t1 = n != 1        |                      |                      |
+    |         if (!t1) goto done |                      |                      |
+    |         t2 = n & 1         |                      |                      |
+    |         if (!t2) goto odd  |                      |                      |
+    |         t3 = n >> 1        |                      |                      |
+    |         n = t3             |                      |                      |
+    |         goto fi            |                      |                      |
+    |odd:     t4 = 3 * n         |                      |                      |
+    |         t5 = t4 + 1        |                      |                      |
+    |         n = t5             |                      |                      |
+    |fi:      t6 = c + 1         |                      |                      |
+    |         c = t6             |                      |                      |
+    |         goto loop          |                      |                      |
+    |done:    return c           |                      |                      |
+    +----------------------------+----------------------+----------------------+
+
+
+
+Question 8 on Free Response on cmps104a-2016q2-final.tt with accuracy 0.9583333333333334: 
+   Draw an abstract syntax tree for the following function,
+    using the specifications for the project.
+    Draw it neatly or lose points for being messy.
+    [4pt]
+
+    int collatz (int n) {
+       int c = 0;
+       while (n != 1)
+          if (n % 2 == 1)
+             n = 3 * n + 1;
+          else
+             n = n / 2;
+       return c;
+    }
+
+
+
+
+Question 3 on Multiple Choice part 1 on cmps104a-2016q2-final.tt with accuracy 0.9090909090909091: 
+    Uninitialized variables is a ___ problem.
+    (A) basic block
+    (B) control flow
+    (C) data flow
+    (D) dominator
+
+
+
+Question 4 on Multiple Choice part 1 on cmps104a-2016q2-final.tt with accuracy 0.9285714285714286: 
+    The first instruction in the prolog of a function is usually:
+    (A) movq   %rsp, %rbp
+    (B) popq   %rbp
+    (C) pushq  %rbp
+    (D) pushq  %rsp
+
+
+
+Question 8 on Multiple Choice part 1 on cmps104a-2016q2-final.tt with accuracy 0.9047619047619048: 
+    An abstract syntax tree:
+    (A) has all operators as interior nodes.
+    (B) has all operators as leaf nodes.
+    (C) has multiple root nodes.
+    (D) is constructed by the function yylex.
+
+
+
+Question 3 on Multiple Choice part 2 on cmps104a-2016q2-final.tt with accuracy 0.8636363636363636: 
+    Class files generated for the Java virtual machine contain what
+    kind of code?
+    (A) an abstract syntax tree
+    (B) stack machine code
+    (C) three-address code
+    (D) x86_64 machine instructions
+
+
+
+Question 4 on Multiple Choice part 2 on cmps104a-2016q2-final.tt with accuracy 0.8571428571428571: 
+    A depth-first spanning tree is used to construct what?
+    (A) a non-deterministic finite automaton.
+    (B) the abstract syntax tree.
+    (C) the dominator tree of a function.
+    (D) the graph of basic blocks.
+
+
+
+Question 7 on Multiple Choice part 2 on cmps104a-2016q2-final.tt with accuracy 0.9285714285714286: 
+    The grammar:
+       $A~->~x$
+       $A~->~y$
+    (A) is both LR(0) and SLR(1).
+    (B) is LR(0) but not SLR(1).
+    (C) is not LR(0) but is SLR(1).
+    (D) is neither LR(0) nor SLR(1).
+
+
+
+Question 2 on Free Response on cmps104a-2016q2-test1.tt with accuracy 0.8571428571428571: 
+   Given the nondeterministic finite automaton shown here:
+     (a) Write the regular expression that was used by Thompson's
+         construction to create this NFA.  [1pt]
+
+     (b) Fill in the table of \epsilon-closures for each state.  [2pt]
+     (c) Use the subset algorithm to construct the equivalent
+         deterministic finite automaton.  Inside each state of the
+         DFA, write the numbers of the NFA states to which it
+         corresponds.  Do not minimize.  Draw the DFA underneath the
+         NFA.  [2pt]
+
+    +----------+------------------------+
+    |state $s$ | \epsilon-closure ($s$) |
+    +----------+------------------------+ .PS 3.75i
+    |    1     |                        | circlerad=.4
+    +----------+------------------------+ arrowwid=0.15
+    |    2     |                        | arrowht=0.25
+    +----------+------------------------+ movewid=.6
+    |    3     |                        | x=movewid*1.4
+    +----------+------------------------+ S0: circle invis
+    |    4     |                        | S1: circle "1" at S0+(x*2,0)
+    +----------+------------------------+ S2: circle "2" at S1+(x*2,0)
+    |    5     |                        | S3: circle "3" at S2+(x*2,0)
+    +----------+------------------------+ S4: circle "4" at S3+(x*2,0)
+    |    6     |                        | S5: circle "5" at S4+(x*1.322876,x*1.5)
+    +----------+------------------------+ S6: circle "6" at S5+(x*2,0)
+    |    7     |                        | S7: circle "7" at S4+(x*1.322876,-x*1.5)
+    +----------+------------------------+ S8: circle "8" at S7+(x*2,0)
+    |    8     |                        | S9: circle "9" at S6+(x*1.322876,-x*1.5)
+    +----------+------------------------+ S10: circle "10" at S9+(x*2,0)
+    |    9     |                        | circle rad circlerad*.8 at S10
+    +----------+------------------------+ arrow from S0 to S1 chop
+    |   10     |                        | arrow "\[*e]" above from S1 to S2 chop
+    +----------+------------------------+ arrow "x" above from S2 to S3 chop
+    |          |                        | arrow "\[*e]" above from S3 to S4 chop
+    |          |                        | arrow "\[*e]" above from S4 to S5 chop
+    |          |                        | arrow "\[*e]" above from S4 to S7 chop
+    |          |                        | arrow "y" above from S5 to S6 chop
+    |          |                        | arrow "z" above from S7 to S8 chop
+    |          |                        | arrow "w" above from S9 to S10 chop
+    |          |                        | arrow "\[*e]" above from S6 to S9 chop
+    |          |                        | arrow "\[*e]" above from S8 to S9 chop
+    |          |                        | spline from S3.n to S3.nw+(0,x*.75) then to S2.ne+(0,x*.75) then to S2.n ->
+    |          |                        | "\[*e]" at S2+(x,x*1.3)
+    |          |                        | spline from S1.se to S2.s+(0,-x*.75) then to S3.s+(0,-x*.75) then to S4.sw ->
+    |          |                        | "\[*e]" at S2+(x,-x)
+    |          |                        | .PE
+    |          |                        |
+
+
+
+Question 1 on Multiple Choice part 1 on cmps104a-2016q2-test1.tt with accuracy 0.875: 
+    Which of the following semantic actions in a flex grammar is
+    obviously wrong?
+    (A) { return '+'; }
+    (B) { return *yytext; }
+    (C) { return PLUS; }
+    (D) { return "+"; }
+
+
+
+Question 8 on Multiple Choice part 1 on cmps104a-2016q2-test2.tt with accuracy 0.8666666666666667: 
+    Calls to new or malloc will allocate memory on which program
+    segment?
+    (A) data
+    (B) heap
+    (C) stack
+    (D) text
+
+
+
+Question 7 on Free Response on cmps104a-2016q4-final.tt with accuracy 0.907103825136612: 
+   Basic blocks and dominator trees.
+     (a) Given the code shown in the box, draw a horizontal line
+         immediately above the leader of each basic block, thus
+         separating it from the last instruction in the preceding
+         basic block.  Number the basic blocks in sequence as 1, 2,
+         ..., etc.  in the same order as the instructions appear.
+         [1pt]
+     (b) Draw a data flow diagram with each circle in the diagram
+         having the number of a basic block, and with arrow showing
+         flow of control.  Draw a follow link with a downward arrow
+         and a branch link with an arrow that starts out from the side
+         of the source block.  [1pt]
+     (c) Draw the dominator tree with solid downward arrows showing
+         the dom relationship.  The root should be at the top of the
+         diagram.  Draw a dotted arrow showing back edges.  Write an
+         asterisk next to the head of all natural loops.  Draw cross
+         edges with a wiggly-lined arrow.  [1pt]
+
+    +---------------------+-------------------------+-----------------------+
+    |     (a)             |          (b)            |         (c)           |
+    +---------------------+-------------------------+-----------------------+
+    |fib: param n         |                         |                       |
+    |     a = 0           |                         |                       |
+    |     t1 = n <= 0     |                         |                       |
+    |     if (t1) goto L4 |                         |                       |
+    |     b = 1           |                         |                       |
+    |     goto L3         |                         |                       |
+    |L9:  t2 = a + b      |                         |                       |
+    |     c = t2          |                         |                       |
+    |     a = b           |                         |                       |
+    |     b = c           |                         |                       |
+    |     t4 = n - 1      |                         |                       |
+    |     n = t4          |                         |                       |
+    |L3:  t3 = n > 0      |                         |                       |
+    |     if (t3) goto L9 |                         |                       |
+    |L4:  return a        |                         |                       |
+    +---------------------+-------------------------+-----------------------+
+
+
+
+Question 8 on Free Response on cmps104a-2016q4-final.tt with accuracy 0.8947368421052632: 
+   Draw deterministic finite automata for each of the following flex
+    regular expressions.  Use the minimum possible number of states.
+    [4pt]
+
+    +-------------------------------+-------------------------------+
+    |            a*b*c              |           (a|b)+c             |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    +-------------------------------+-------------------------------+
+    |           ab|cd+              |            (abc)+             |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    +-------------------------------+-------------------------------+
+
+
+
+Question 1 on Multiple Choice part 1 on cmps104a-2016q4-final.tt with accuracy 0.9166666666666666: 
+    For int i;  in C, which is true for either a positive or negative
+    number?
+    (A) i << 5 same as i * 32
+    (B) i >> 5 same as i * 32
+    (C) i << 5 same as i / 32
+    (D) i >> 5 same as i / 32
+
+
+
+Question 2 on Multiple Choice part 1 on cmps104a-2016q4-final.tt with accuracy 0.9545454545454546: 
+    What is the same as x = -x if x is an int?
+    (A) x = ! x + 1
+    (B) x = ! x - 1
+    (C) x = ~ x + 1
+    (D) x = ~ x - 1
+
+
+
+Question 10 on Multiple Choice part 1 on cmps104a-2016q4-final.tt with accuracy 0.9166666666666666: 
+    What is the function return register used for a 32-bit integer on
+    the x86-64 architecture?
+    (A) %al
+    (B) %ax
+    (C) %eax
+    (D) %rax
+
+
+
+Question 5 on Free Response on cmps104a-2016q4-midterm.tt with accuracy 0.8866995073891626: 
+   Given the nondeterministic finite automaton shown here:
+     (a) Write the regular expression that was used by Thompson's
+         construction to create this NFA.  [1pt]
+
+     (b) Fill in the table of \epsilon-closures for each state.  [2pt]
+     (c) Use the subset algorithm to construct the equivalent
+         deterministic finite automaton.  Inside each state of the
+         DFA, write the numbers of the NFA states to which it
+         corresponds.  Draw the DFA in the space under the NFA.  [2pt]
+
+    +----------+------------------------+
+    |state $s$ | \epsilon-closure ($s$) |
+    +----------+------------------------+ .PS 3.3i
+    |    1     |                        | circlerad=.3
+    +----------+------------------------+ arrowwid=0.1
+    |    2     |                        | arrowht=0.2
+    +----------+------------------------+ movewid=.5
+    |    3     |                        | x=movewid*1.4
+    +----------+------------------------+ S2: circle "2"
+    |    4     |                        | S3: circle "3" at S2+(x*2,0)
+    +----------+------------------------+ S4: circle "4" at S3+(x*2,0)
+    |    5     |                        | S5: circle "5" at S4+(x*2,0)
+    +----------+------------------------+ S6: circle "6" at S5+(x*2,0)
+    |    6     |                        | S8: circle "8" at S2-(0,x*3)
+    +----------+------------------------+ S9: circle "9" at S8+(x*2,0)
+    |    7     |                        | S10: circle "10" at S9+(x*2,0)
+    +----------+------------------------+ S11: circle "11" at S10+(x*2,0)
+    |    8     |                        | S12: circle "12" at S11+(x*2,0)
+    +----------+------------------------+ arrow "\[*e]" above from S2 to S3 chop
+    |    9     |                        | arrow "a" above from S3 to S4 chop
+    +----------+------------------------+ arrow "\[*e]" above from S4 to S5 chop
+    |   10     |                        | arrow "b" above from S5 to S6 chop
+    +----------+------------------------+ arrow "\[*e]" above from S8 to S9 chop
+    |   11     |                        | arrow "c" above from S9 to S10 chop
+    +----------+------------------------+ arrow "\[*e]" above from S10 to S11 chop
+    |   12     |                        | arrow "d" above from S11 to S12 chop
+    +----------+------------------------+ spline from S4.nw to S3+(x,x) then to S3.ne ->
+    |          |                        | spline from S10.nw to S9+(x,x) then to S9.ne ->
+    |          |                        | spline from S2.se to S3+(0,-x) then to S4+(0,-x) then to S5.sw ->
+    |          |                        | spline from S8.se to S9+(0,-x) then to S10+(0,-x) then to S11.sw ->
+    |          |                        | "\[*e]" at S3+(x,x*1.1)
+    |          |                        | "\[*e]" at S9+(x,x*1.1)
+    |          |                        | "\[*e]" at S3+(x,-x*.8)
+    |          |                        | "\[*e]" at S9+(x,-x*.8)
+    |          |                        | S1: circle "1" at S2+(-x*1.322876,-x*1.5)
+    |          |                        | S7: circle "7" at S6+(x*1.322876,-x*1.5)
+    |          |                        | circle rad circlerad*.8 at S7
+    |          |                        | arrow "\[*e]" above from S1 to S2 chop
+    |          |                        | arrow "\[*e]" above from S1 to S8 chop
+    |          |                        | arrow "\[*e]" above from S6 to S7 chop
+    |          |                        | arrow "\[*e]" above from S12 to S7 chop
+    |          |                        | S0: circle invis at S1-(x*2,0)
+    |          |                        | arrow from S0 to S1 chop
+    |          |                        | .PE
+    |          |                        |
+
+
+
+Question 5 on Free Response on cmps104a-2017q2-final.tt with accuracy 0.8666666666666667: 
+   Assuming that a pointer called free points at the beginning of the
+    free area and end points at the end of the free area, and that all
+    free memory is in one contiguous block, write a function alloc
+    that allocates storage that is aligned to a 16-byte boundary.
+    Call the garbage collector (gc) if space is insufficient.  Assume
+    free and end are global variables always aligned to a 16-byte
+    boundary and that the garbage collector always succeeds.  [3pt]
+
+
+
+Question 7 on Free Response on cmps104a-2017q2-final.tt with accuracy 0.9: 
+   Given the function prolog listed at the left, write code using the
+    movq and popq instructions for the epilog immediately before the
+    ret instruction.  [1pt]
+
+    prolog:   pushq   %rbp                 epilog:
+              movq    %rsp, %rbp
+              subq    $256, %rsp                     ret
+
+
+
+Question 8 on Free Response on cmps104a-2017q2-final.tt with accuracy 0.9428571428571428: 
+   Given the graph of basic blocks shown here, draw the dominator
+.PS .85i.  [1pt]
+circlerad=.15
+A0: circle invis
+A1: circle "1" at A0-(0,.5)
+A2: circle "2" at A1-(0,.5)
+A3: circle "3" at A2+(.5,0)
+A4: circle "4" at A2-(0,.5)
+A5: circle "5" at A4+(-.3535,-.3535)
+A6: circle "6" at A4+(.3535,-.3535)
+A7: circle "7" at A4+(0,-.707)
+arrow from A0 to A1 chop
+arrow from A1 to A2 chop
+arrow from A2 to A3 chop
+arrow from A2 to A4 chop
+arrow from A4 to A5 chop
+arrow from A4 to A6 chop
+arrow from A5 to A7 chop
+arrow from A6 to A7 chop
+spline from A7.w to A7.w-(.5,0) then to A5.nw+(-.25,.10) \
+then to A2-(.5,0) then to A2.w ->
+.PE
+
+
+
+Question 9 on Free Response on cmps104a-2017q2-final.tt with accuracy 0.9393939393939394: 
+   Using the specifications for the project, draw the abstract syntax
+    tree for the following function.  [3pt]
+
+    int f (int n) {
+       int r = 1;
+       while (n > 1) {
+          r = r * n;
+          n = n - 1;
+       }
+       return r;
+    }
+
+
+
+
+Question 4 on Multiple Choice part 1 on cmps104a-2017q2-final.tt with accuracy 0.95: 
+    In a function's stack frame, what is used to point at its caller's
+    stack frame?
+    (A) base pointer register
+    (B) dynamic (control) link
+    (C) return address
+    (D) static (access) link
+
+
+
+Question 7 on Multiple Choice part 1 on cmps104a-2017q2-final.tt with accuracy 0.96: 
+    Given the boundary tag method of heap management, what is the
+    space overhead of each node malloc'd from the heap?
+    (A) 2 * sizeof (char)
+    (B) 2 * sizeof (int)
+    (C) 2 * sizeof (node)
+    (D) 2 * sizeof (uintptr_t)
+
+
+
+Question 4 on Multiple Choice part 2 on cmps104a-2017q2-final.tt with accuracy 0.8703703703703703: 
+    If an NFA that is constructed from a regular expression of length
+    $ left | r right | $ and then is used to scan a string of length $
+    left | s right | $, what is its running time?
+    (A) $ O ( 2 sup { left | r right | } ) $
+    (B) $ O ( left | r right | ) $
+    (C) $ O ( left | r right | times left | s right | ) $
+    (D) $ O ( left | s right | ) $
+
+
+
+Question 2 on Free Response on cmps104a-2017q2-midterm.tt with accuracy 0.8695652173913043: 
+   Draw deterministic finite automata for each of the following flex
+    regular expressions.  Use as few states as possible.  [5pt]
+
+     (a) ab|c*d
+
+     (b) a|bc+
+
+     (c) "/"a*b*
+
+     (d) ab?c?d
+
+     (e) a+b+c+
+
+
+
+Question 7 on Free Response on cmps104a-2017q2-midterm.tt with accuracy 0.8896103896103896: 
+   Given the following nondeterministic finite automaton:
+     (a) Write the regular expression from which Thompson's construc-
+         tion was used to construct it.  [1pt]
+     (b) Fill in the table with the \epsilon-closure of each state.
+         [2pt]
+
+                                                                               +------------+------------------------+
+                                                                               |  state $s$ | \epsilon-closure ($s$) |
+         .PS 2.5i                                                              +------------+------------------------+
+         arrowwid=0.1                                                          |     1      |                        |
+         arrowht=0.2                                                           +------------+------------------------+
+         circlerad=0.25                                                        |     2      |                        |
+         S0: circle invis                                                      +------------+------------------------+
+         S1: circle "1" at S0+(1,0)                                            |     3      |                        |
+         S2: circle "2" at S1+(1,0)                                            +------------+------------------------+
+         S3: circle "3" at S2+(.7,.7)                                          |     4      |                        |
+         S4: circle "4" at S3+(1,0)                                            +------------+------------------------+
+         S5: circle "5" at S2+(.7,-.7)                                         |     5      |                        |
+         S6: circle "6" at S5+(1,0)                                            +------------+------------------------+
+         S7: circle "7" at S4+(.7,-.7)                                         |     6      |                        |
+         S8: circle "8" at S7+(1,0)                                            +------------+------------------------+
+         circle rad circlerad+.05 at S8                                        |     7      |                        |
+         arrow from S0 to S1 chop                                              +------------+------------------------+
+         arrow "\[*e]" above from S1 to S2 chop                                |     8      |                        |
+         arrow "\[*e]" above from S2 to S3 chop                                +------------+------------------------+
+         arrow "a" above from S3 to S4 chop                                    |            |                        |
+         arrow "\[*e]" above from S2 to S5 chop                                |            |                        |
+         arrow "b" above from S5 to S6 chop                                    |            |                        |
+         arrow "\[*e]" above from S4 to S7 chop                                |            |                        |
+         arrow "\[*e]" above from S6 to S7 chop                                |            |                        |
+         arrow "\[*e]" above from S7 to S8 chop                                |            |                        |
+         spline from S1.s to S5.sw-(0,.7) then to S6.se-(0,.7) then to S8.s -> |            |                        |
+         spline from S7.n to S7.n+(0,1) then to S2.n+(0,1) then to S2.n ->     |            |                        |
+         circle invis "\[*e]" at S3+(.5,.75)                                   |            |                        |
+         circle invis "\[*e]" at S5+(.5,-.75)                                  |            |                        |
+         .PE                                                                   |            |                        |
+                                                                               |            |                        |
+
+     (c) Use the subset algorithm to construct the equivalent deter-
+         ministic finite automaton.  Inside each state of the DFA
+         write the numbers of the NFA states to which it corresponds.
+         [2pt]
+
+
+
+Question 2 on Multiple Choice part 1 on cmps104a-2017q2-midterm.tt with accuracy 0.8571428571428571: 
+    Given a regular expression $e$ which is used to construct a DFA,
+    then used to scan a string $s$, the running time will be:
+    (A) $ O ( 2 sup { left | e right | } ) $
+    (B) $ O ( left | e right | ) $
+    (C) $ O ( left | s right | ) $
+    (D) $ O ( left | s right | times left | e right | ) $
+
+
+
+Question 7 on Multiple Choice part 1 on cmps104a-2017q2-midterm.tt with accuracy 0.9333333333333333: 
+    A -> y
+    (A) is both LR(0) and SLR(1).
+    (B) is LR(0) but not SLR(1).
+    (C) is not LR(0) but is SLR(1).
+    (D) is neither LR(0) nor SLR(1).
+
+
+
+Question 11 on Multiple Choice part 1 on cmps104a-2017q2-midterm.tt with accuracy 0.9285714285714286: 
+    A ->
+    (A) is both LR(0) and SLR(1).
+    (B) is LR(0) but not SLR(1).
+    (C) is not LR(0) but is SLR(1).
+    (D) is neither LR(0) nor SLR(1).
+
+
+
+Question 11 on Free Response on cmps104a-2017q4-final.tt with accuracy 0.9466666666666667: 
+    Given the following graph of basic blocks, draw the dominator
+.PS .75i.  [1pt]
+circlerad=.15e is the head of a natural loop?  __________
+A0: circle invis
+A1: circle "1" at A0-(0,.5)
+A2: circle "2" at A1-(0,.5)
+A3: circle "3" at A2+(.5,0)
+A4: circle "4" at A2-(0,.5)
+A5: circle "5" at A4+(-.3535,-.3535)
+A6: circle "6" at A4+(.3535,-.3535)
+A7: circle "7" at A4+(0,-.707)
+arrow from A0 to A1 chop
+arrow from A1 to A2 chop
+arrow from A2 to A3 chop
+arrow from A2 to A4 chop
+arrow from A4 to A5 chop
+arrow from A4 to A6 chop
+arrow from A5 to A7 chop
+arrow from A6 to A7 chop
+spline from A7.w to A7.w-(.5,0) then to A5.nw+(-.25,.10) \
+then to A2-(.5,0) then to A2.w ->
+.PE
+
+
+
+Question 8 on Multiple Choice part 1 on cmps104a-2017q4-final.tt with accuracy 0.8888888888888888: 
+    What address, stored in a local stack frame, is used to point at
+    the local stack frame of the calling function?
+    (A) base (frame) pointer register
+    (B) dynamic (control) link
+    (C) return address
+    (D) static (access) link
+
+
+
+Question 2 on Free Response on cmps104a-2017q4-midterm.tt with accuracy 0.8947368421052632: 
+   Draw deterministic finite automata for each of the following flex
+    regular expressions.  Use the minimum possible number of states.
+    [4pt]
+
+    +-------------------------------+-------------------------------+
+    |a+b+c+                         |a*b*c*                         |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    +-------------------------------+-------------------------------+
+    |a|bc|d                         |(abc)*                         |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    +-------------------------------+-------------------------------+
+
+
+
+Question 4 on Multiple Choice part 1 on cmps104a-2017q4-midterm.tt with accuracy 0.8571428571428571: 
+    Determining that if is a reserved word is determined by:
+    (A) preprocessor
+    (B) string table
+    (C) scanner
+    (D) parser
+
+
+
+Question 6 on Free Response on cmps104a-2018q2-midterm.tt with accuracy 0.9090909090909091: 
+   Draw the abstract syntax tree for the following code fragment, ac-
+    cording to the specifications for the parser project.  [2pt]
+
+    while (n != 1) {
+       if (n % 2 == 0) n = n / 2;
+                  else n = n * 3 + 1;
+    }
+
+
+
+Question 9 on Free Response on cmps104a-2018q2-midterm.tt with accuracy 0.8846153846153846: 
+   Draw deterministic finite automata for each of the following flex
+    regular expressions.  Use the minimum possible number of states.
+    Use the diagram style presented in class.  [4pt]
+
+    +-------------------------------+-------------------------------+
+    |ab*|cd+                        |xy?[pq]                        |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    +-------------------------------+-------------------------------+
+    |(abc)+x                        | (ab?c)*                       |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    |                               |                               |
+    +-------------------------------+-------------------------------+
+
+
+
